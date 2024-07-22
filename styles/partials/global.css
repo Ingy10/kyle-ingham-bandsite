@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "avenirLight";
+  src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf"), url("../../assets/fonts/AvenirNextLTPro.ttf");
+}
+@font-face {
+  font-family: "avenirBold";
+  src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf"), url("../../assets/fonts/AvenirNextLTProBold.ttf");
+}
+@font-face {
+  font-family: "avenirNormal";
+  src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-bar {
+  background-color: black;
+}
+
+.nav-bar__link {
+  color: white;
+  font-family: "avenirLight";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+.logo {
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+
+.button {
+  height: 2.5rem;
+  border-radius: 0.25rem;
+}
+
+.desktop-button {
+  min-width: 9.375rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}/*# sourceMappingURL=global.css.map */

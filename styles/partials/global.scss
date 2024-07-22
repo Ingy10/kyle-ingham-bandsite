@@ -1,0 +1,45 @@
+@use "./fonts" as *;
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// Resets for page
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+ul {
+  padding: 0;
+}
+li {
+  list-style-type: none;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+
+// Navigation Bar
+.nav-bar {
+  background-color: black;
+}
+.nav-bar__link {
+  color: white;
+  @include desktop-body-font();
+}
+
+// Logo (can not exceed dimensions below as per style-guide)
+.logo {
+  max-height: 1.25rem;
+  max-width: 7.5rem;
+}
+
+// Button **consider making these into mixins if it makes more sense
+.button {
+  height: 2.5rem; //must be this height across all screen-sizes
+  border-radius: 0.25rem;
+}
+.desktop-button {
+  min-width: 9.375rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
