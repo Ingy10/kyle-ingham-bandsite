@@ -29,14 +29,45 @@ a {
 }
 
 .nav-bar {
-  background-color: black;
+  background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
 }
-
+.nav-bar__element-2 {
+  width: 100%;
+}
+.nav-bar__list {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 0;
+}
+.nav-bar__item {
+  flex-grow: 1;
+  text-align: center;
+}
 .nav-bar__link {
-  color: white;
+  color: #e1e1e1;
   font-family: "avenirLight";
-  font-size: 0.875rem;
-  line-height: 1.375rem;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: block;
+  border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+.nav-bar__link:hover {
+  color: #ffffff;
+  border-bottom: 3px solid #ffffff;
+}
+.nav-bar__link:active {
+  color: #ffffff;
+  font-family: "avenirNormal";
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+  border-bottom: 3px solid #ffffff;
 }
 
 .logo {

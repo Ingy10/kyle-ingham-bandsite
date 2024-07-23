@@ -20,11 +20,46 @@ a {
 
 // Navigation Bar
 .nav-bar {
-  background-color: black;
-}
-.nav-bar__link {
-  color: white;
-  @include desktop-body-font();
+  background-color: $p-color1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+
+  &__element-2 {
+    // border: 1px solid red;
+    width: 100%;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    padding: 0;
+    // border: 1px solid red;
+  }
+  &__item {
+    flex-grow: 1;
+    text-align: center;
+    // border: 1px solid green;
+  }
+  &__link {
+    color: $s-color2;
+    @include mobile-button-font();
+    cursor: pointer;
+    padding: 0.5rem;
+    display: block;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    // border: 1px solid orange;
+    &:hover {
+      color: $p-color3;
+      border-bottom: 3px solid $p-color3;
+    }
+    &:active {
+      color: $p-color3;
+      @include mobile-button-bold-font();
+      border-bottom: 3px solid $p-color3;
+    }
+  }
 }
 
 // Logo (can not exceed dimensions below as per style-guide)
