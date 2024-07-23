@@ -10,10 +10,6 @@
   font-family: "avenirNormal";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
 }
-body {
-  background-color: #fafafa;
-}
-
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
   min-height: 13rem;
@@ -82,9 +78,45 @@ body {
   line-height: 1.125rem;
   color: #323232;
   margin-top: 1.5rem;
+  margin-bottom: 1rem;
 }
 .main1__text-adjust1 {
   font-family: "avenirNormal";
   font-size: 0.8125rem;
   line-height: 1.125rem;
+}
+
+.main2 {
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main2__title {
+  font-family: "avenirNormal";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #323232;
+  width: 90%;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.main2__gallery {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main2__images {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center bottom;
+     object-position: center bottom;
+  margin-bottom: 1rem;
+}
+
+.footer {
+  background-color: #323232;
 }/*# sourceMappingURL=bio.css.map */

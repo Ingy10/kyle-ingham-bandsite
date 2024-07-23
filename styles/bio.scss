@@ -2,11 +2,6 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
-// Entire body styles
-body {
-  background-color: $s-color3;
-}
-
 // Header section
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
@@ -35,20 +30,16 @@ body {
 
 // Main section
 .main1 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center();
   margin: auto;
   width: 90%;
-  //   border: 1px solid gold;
 
   &__title {
     @include mobile-header-font();
     color: $p-color1;
     width: 100%;
-    padding-top: 1.5rem;
-    padding-bottom: 1rem;
-    // border: 1px solid blue;
+    padding-top: $full-plus-half-unit;
+    padding-bottom: $full-unit;
   }
   &__image-1 {
     width: 100%;
@@ -63,17 +54,47 @@ body {
     padding-top: 0.6rem;
     text-align: left;
     width: 100%;
-    // border: 1px solid green;
   }
   &__text-1 {
-    padding-top: 1rem;
+    padding-top: $full-unit;
   }
   &__text-3 {
     @include mobile-body-font-light();
     color: $p-color1;
-    margin-top: 1.5rem;
+    margin-top: $full-plus-half-unit;
+    margin-bottom: $full-unit;
   }
   &__text-adjust1 {
     @include mobile-body-font-normal();
   }
+}
+
+// Main section 2
+.main2 {
+  background-color: $s-color3;
+  @include flex-column-center();
+
+  &__title {
+    @include mobile-header-font();
+    color: $p-color1;
+    width: 90%;
+    padding-top: $full-plus-half-unit;
+    padding-bottom: $full-unit;
+  }
+  &__gallery {
+    width: 90%;
+    @include flex-column-center();
+  }
+  &__images {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center bottom;
+    margin-bottom: $full-unit;
+  }
+}
+
+// Footer
+.footer {
+  background-color: $p-color1;
 }
