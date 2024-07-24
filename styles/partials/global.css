@@ -48,6 +48,7 @@ a {
 .nav-bar__item {
   flex-grow: 1;
   text-align: center;
+  display: flex;
 }
 .nav-bar__link {
   color: #e1e1e1;
@@ -56,7 +57,7 @@ a {
   line-height: 1.25rem;
   cursor: pointer;
   padding: 0.5rem;
-  display: block;
+  flex-grow: 1;
   border-bottom: 3px solid rgba(255, 255, 255, 0);
 }
 .nav-bar__link:hover {
@@ -71,18 +72,22 @@ a {
   border-bottom: 3px solid #ffffff;
 }
 
-.logo {
-  max-height: 1.25rem;
-  max-width: 7.5rem;
+.main-logo {
+  max-height: 20px;
+  max-width: 120px;
 }
 
-.button {
-  height: 2.5rem;
-  border-radius: 0.25rem;
+.CTA__button {
+  height: 40px;
+  border-radius: 4px;
 }
 
-.desktop-button {
-  min-width: 9.375rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+.CTA__desktop-button {
+  min-width: 150px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.CTA__mobile-button {
+  width: 100%;
 }/*# sourceMappingURL=global.css.map */

@@ -12,10 +12,13 @@
 }
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
-  min-height: 13rem;
+  aspect-ratio: 16/9;
   position: relative;
   background-size: cover;
   background-position: right;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 .hero-container__title {
   color: #ffffff;
@@ -23,9 +26,7 @@
   font-size: 1.5rem;
   line-height: 2rem;
   z-index: 1;
-  position: absolute;
-  top: 40%;
-  left: 5%;
+  padding-left: 1rem;
 }
 .hero-container__filter {
   position: absolute;

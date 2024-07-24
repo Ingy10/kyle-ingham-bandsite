@@ -5,18 +5,19 @@
 // Header section
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
-  min-height: 13rem;
+  aspect-ratio: 16/9;
   position: relative;
   background-size: cover;
   background-position: right;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 
   &__title {
     color: $p-color3;
     @include mobile-header-font();
     z-index: 1;
-    position: absolute;
-    top: 40%;
-    left: 5%;
+    padding-left: $full-unit;
   }
   &__filter {
     position: absolute;

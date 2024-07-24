@@ -22,9 +22,7 @@ a {
 // Navigation Bar
 .nav-bar {
   background-color: $p-color1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flex-column-center;
   padding-top: 1rem;
 
   &__element-2 {
@@ -42,13 +40,14 @@ a {
     flex-grow: 1;
     text-align: center;
     // border: 1px solid green;
+    display: flex;
   }
   &__link {
     color: $s-color2;
     @include mobile-button-font();
     cursor: pointer;
     padding: 0.5rem;
-    display: block;
+    flex-grow: 1;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
     // border: 1px solid orange;
     &:hover {
@@ -64,18 +63,21 @@ a {
 }
 
 // Logo (can not exceed dimensions below as per style-guide)
-.logo {
-  max-height: 1.25rem;
-  max-width: 7.5rem;
+.main-logo {
+  max-height: 20px;
+  max-width: 120px;
 }
 
 // Button **consider making these into mixins if it makes more sense
-.button {
-  height: 2.5rem; //must be this height across all screen-sizes
-  border-radius: 0.25rem;
+.CTA__button {
+  height: 40px; //must be this height across all screen-sizes
+  border-radius: 4px;
 }
-.desktop-button {
-  min-width: 9.375rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+.CTA__desktop-button {
+  min-width: 150px;
+  padding-left: 32px; //minimum padding
+  padding-right: 32px; //minimum padding
+}
+.CTA__mobile-button {
+  width: 100%; // must span entire width of container
 }
