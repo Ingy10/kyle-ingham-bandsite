@@ -23,24 +23,36 @@ a {
 .nav-bar {
   background-color: $p-color1;
   @include flex-column-center;
-  padding-top: 1rem;
-
+  padding-top: $full-unit;
+  @include tablet {
+    flex-direction: row;
+    padding: 0;
+    padding-left: $full-plus-half-unit;
+  }
+  @include desktop {
+    padding-left: 8rem;
+  }
   &__element-2 {
-    // border: 1px solid red;
     width: 100%;
+    @include tablet {
+      width: 17rem;
+      padding-left: 4.5rem;
+    }
   }
   &__list {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     padding: 0;
-    // border: 1px solid red;
   }
   &__item {
     flex-grow: 1;
     text-align: center;
-    // border: 1px solid green;
     display: flex;
+    @include tablet {
+      justify-content: left;
+      padding-right: $full-plus-half-unit;
+    }
   }
   &__link {
     color: $s-color2;
@@ -49,7 +61,15 @@ a {
     padding: 0.5rem;
     flex-grow: 1;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
-    // border: 1px solid orange;
+    @include tablet {
+      padding: $full-plus-half-unit 0;
+      flex-grow: 0;
+      border-bottom: 3px solid rgba(255, 255, 255, 0);
+      @include desktop-button-font();
+    }
+    @include desktop {
+      padding: $double-unit 0;
+    }
     &:hover {
       color: $p-color3;
       border-bottom: 3px solid $p-color3;
@@ -58,6 +78,9 @@ a {
       color: $p-color3;
       @include mobile-button-bold-font();
       border-bottom: 3px solid $p-color3;
+      @include tablet {
+        @include desktop-button-bold-font();
+      }
     }
   }
 }

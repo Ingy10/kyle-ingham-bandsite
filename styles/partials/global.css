@@ -36,8 +36,26 @@ a {
   align-items: center;
   padding-top: 1rem;
 }
+@media (min-width: 768px) {
+  .nav-bar {
+    flex-direction: row;
+    padding: 0;
+    padding-left: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-bar {
+    padding-left: 8rem;
+  }
+}
 .nav-bar__element-2 {
   width: 100%;
+}
+@media (min-width: 768px) {
+  .nav-bar__element-2 {
+    width: 17rem;
+    padding-left: 4.5rem;
+  }
 }
 .nav-bar__list {
   display: flex;
@@ -50,6 +68,12 @@ a {
   text-align: center;
   display: flex;
 }
+@media (min-width: 768px) {
+  .nav-bar__item {
+    justify-content: left;
+    padding-right: 1.5rem;
+  }
+}
 .nav-bar__link {
   color: #e1e1e1;
   font-family: "avenirLight";
@@ -59,6 +83,21 @@ a {
   padding: 0.5rem;
   flex-grow: 1;
   border-bottom: 3px solid rgba(255, 255, 255, 0);
+}
+@media (min-width: 768px) {
+  .nav-bar__link {
+    padding: 1.5rem 0;
+    flex-grow: 0;
+    border-bottom: 3px solid rgba(255, 255, 255, 0);
+    font-family: "avenirLight";
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .nav-bar__link {
+    padding: 2rem 0;
+  }
 }
 .nav-bar__link:hover {
   color: #ffffff;
@@ -70,6 +109,13 @@ a {
   font-size: 0.8rem;
   line-height: 1.25rem;
   border-bottom: 3px solid #ffffff;
+}
+@media (min-width: 768px) {
+  .nav-bar__link:active {
+    font-family: "avenirNormal";
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
 }
 
 .main-logo {

@@ -15,7 +15,7 @@
   aspect-ratio: 16/9;
   position: relative;
   background-size: cover;
-  background-position: right;
+  background-position: bottom;
   display: flex;
   justify-content: left;
   align-items: center;

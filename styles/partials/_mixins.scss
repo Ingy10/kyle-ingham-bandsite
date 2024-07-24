@@ -28,7 +28,12 @@
   line-height: 1.25rem;
 }
 @mixin desktop-button-font {
-  font-family: $fontBold;
+  font-family: $fontLight;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+@mixin desktop-button-bold-font {
+  font-family: $fontNormal;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
@@ -78,4 +83,16 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+// Media Query Breakpoints
+@mixin tablet {
+  @media (min-width: $tablet) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
+  }
 }
