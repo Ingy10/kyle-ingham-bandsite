@@ -97,4 +97,51 @@
 // Footer
 .footer {
   background-color: $p-color1;
+  @include flex-column-center();
+
+  &__container {
+    width: 90%;
+    padding: $double-unit 0;
+  }
+  &__section1-title {
+    @include mobile-header-font();
+    color: $p-color3;
+    margin-bottom: $full-unit;
+    padding-left: 0.1rem;
+  }
+  &__icon {
+    margin-right: $full-plus-half-unit;
+  }
+  &__icon-image1 {
+    width: 1.4rem;
+  }
+  &__icon-image2 {
+    width: 0.8rem;
+  }
+  &__icon-image3 {
+    width: 1.7rem;
+  }
+  &__section2 {
+    margin-bottom: $double-unit;
+  }
+  &__div {
+    padding-top: $full-plus-half-unit;
+    color: $p-color3;
+    @include mobile-footer-font();
+  }
+  &__text1 {
+    @include mobile-body-font-normal();
+  }
+  &__text1,
+  &__text2 {
+    margin-bottom: $full-unit;
+  }
+  &__logo {
+    margin-top: $full-unit;
+    margin-bottom: $full-unit;
+  }
+  &__copyright {
+    color: $p-color3;
+    @include mobile-footer-font();
+  }
 }

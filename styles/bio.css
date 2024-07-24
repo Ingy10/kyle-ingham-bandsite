@@ -62,7 +62,7 @@
 }
 .main1__text-1, .main1__text-2 {
   font-family: "avenirBold";
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
   line-height: 1.25rem;
   color: #323232;
   padding-top: 0.6rem;
@@ -119,4 +119,59 @@
 
 .footer {
   background-color: #323232;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__container {
+  width: 90%;
+  padding: 2rem 0;
+}
+.footer__section1-title {
+  font-family: "avenirNormal";
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  padding-left: 0.1rem;
+}
+.footer__icon {
+  margin-right: 1.5rem;
+}
+.footer__icon-image1 {
+  width: 1.4rem;
+}
+.footer__icon-image2 {
+  width: 0.8rem;
+}
+.footer__icon-image3 {
+  width: 1.7rem;
+}
+.footer__section2 {
+  margin-bottom: 2rem;
+}
+.footer__div {
+  padding-top: 1.5rem;
+  color: #ffffff;
+  font-family: "avenirLight";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+.footer__text1 {
+  font-family: "avenirNormal";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+.footer__text1, .footer__text2 {
+  margin-bottom: 1rem;
+}
+.footer__logo {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.footer__copyright {
+  color: #ffffff;
+  font-family: "avenirLight";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }/*# sourceMappingURL=bio.css.map */

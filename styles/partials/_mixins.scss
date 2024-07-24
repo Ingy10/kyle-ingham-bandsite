@@ -29,7 +29,7 @@
 }
 @mixin desktop-button-font {
   font-family: $fontBold;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @mixin mobile-header-font {
@@ -54,7 +54,7 @@
 }
 @mixin mobile-body-font-bold {
   font-family: $fontBold;
-  font-size: 0.9rem;
+  font-size: 0.8125rem;
   line-height: 1.25rem;
 }
 @mixin mobile-footer-font {
