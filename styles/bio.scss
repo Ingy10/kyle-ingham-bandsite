@@ -47,7 +47,6 @@
     @include desktop-section-header-font();
     padding-top: 3rem;
     padding-bottom: 2rem;
-    border: 1px solid blue;
   }
   @include desktop {
     padding-bottom: 3rem;
@@ -170,7 +169,7 @@
     object-position: center bottom;
     padding-bottom: $full-unit;
     @include tablet {
-      width: calc(33.33% - 1rem);
+      width: calc(33.33% - $full-unit);
       padding-bottom: $full-plus-half-unit;
     }
   }
@@ -179,20 +178,46 @@
 // Footer
 .footer {
   background-color: $p-color1;
-  @include flex-column-center();
+  display: flex;
+  justify-content: center;
 
   &__container {
     width: 90%;
     padding: $double-unit 0;
+    @include tablet() {
+      padding: 4rem 0 3.5rem;
+      position: relative;
+    }
+    @include desktop() {
+      width: 80%;
+    }
+  }
+  &__section1 {
+    @include tablet() {
+      display: flex;
+      align-items: center;
+      max-width: 691px;
+      // border: 1px solid green;
+    }
   }
   &__section1-title {
     @include mobile-header-font();
     color: $p-color3;
     margin-bottom: $full-unit;
     padding-left: 0.1rem;
+    @include tablet() {
+      @include desktop-section-header-font();
+      margin: 0;
+      padding-right: 6%;
+    }
   }
   &__icon {
     margin-right: $full-plus-half-unit;
+  }
+  &__image {
+    @include tablet {
+      margin-top: 0.5rem;
+    }
   }
   &__icon-image1 {
     width: 1.4rem;
@@ -205,11 +230,28 @@
   }
   &__section2 {
     margin-bottom: $double-unit;
+    @include tablet() {
+      padding-top: $full-plus-half-unit;
+      display: flex;
+      justify-content: space-between;
+      max-width: 691px;
+      margin-bottom: $full-plus-half-unit;
+    }
   }
   &__div {
     padding-top: $full-plus-half-unit;
     color: $p-color3;
     @include mobile-footer-font();
+    @include tablet() {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__text {
+    @include tablet() {
+      margin: 0;
+      padding-bottom: $full-plus-half-unit;
+    }
   }
   &__text1 {
     @include mobile-body-font-normal();
@@ -217,10 +259,19 @@
   &__text1,
   &__text2 {
     margin-bottom: $full-unit;
+    @include tablet() {
+      margin: 0;
+    }
   }
   &__logo {
     margin-top: $full-unit;
     margin-bottom: $full-unit;
+    @include tablet() {
+      position: absolute;
+      top: 77px;
+      right: 0;
+      margin: 0;
+    }
   }
   &__copyright {
     color: $p-color3;
