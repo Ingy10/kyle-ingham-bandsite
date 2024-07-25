@@ -24,10 +24,18 @@ a {
   background-color: $p-color1;
   @include flex-column-center;
   padding-top: $full-unit;
+  transition: 1s ease-in-out;
   @include tablet {
     flex-direction: row;
     padding: 0;
     padding-left: $full-plus-half-unit;
+  }
+  &:hover {
+    @include tablet {
+      box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.485),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.475);
+      transition: 0.5s ease-in-out;
+    }
   }
   @include desktop {
     padding-left: 8rem;

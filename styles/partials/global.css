@@ -35,12 +35,19 @@ a {
   flex-direction: column;
   align-items: center;
   padding-top: 1rem;
+  transition: 1s ease-in-out;
 }
 @media (min-width: 768px) {
   .nav-bar {
     flex-direction: row;
     padding: 0;
     padding-left: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .nav-bar:hover {
+    box-shadow: inset 2px 2px 5px rgba(255, 255, 255, 0.485), inset -2px -2px 5px rgba(255, 255, 255, 0.475);
+    transition: 0.5s ease-in-out;
   }
 }
 @media (min-width: 1280px) {
