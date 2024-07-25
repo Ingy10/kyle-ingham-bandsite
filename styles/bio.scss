@@ -37,6 +37,22 @@
 }
 
 // Main section
+.subheader-title {
+  @include mobile-header-font();
+  color: $p-color1;
+  width: 100%;
+  padding-top: $full-plus-half-unit;
+  padding-bottom: $full-unit;
+  @include tablet {
+    @include desktop-section-header-font();
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    border: 1px solid blue;
+  }
+  @include desktop {
+    padding-bottom: 3rem;
+  }
+}
 .main1 {
   @include flex-column-center();
   margin: auto;
@@ -47,19 +63,6 @@
   }
   @include desktop {
     width: 85%;
-  }
-
-  &__title {
-    @include mobile-header-font();
-    color: $p-color1;
-    width: 100%;
-    padding-top: $full-plus-half-unit;
-    padding-bottom: $full-unit;
-    @include tablet {
-      @include desktop-section-header-font();
-      padding-top: 3rem;
-      padding-bottom: 2rem;
-    }
   }
   &__image-1 {
     width: 100%;
@@ -138,24 +141,38 @@
 .main2 {
   background-color: $s-color3;
   @include flex-column-center();
+  @include tablet {
+    padding-bottom: $full-unit;
+  }
 
   &__title {
-    @include mobile-header-font();
-    color: $p-color1;
     width: 90%;
-    padding-top: $full-plus-half-unit;
-    padding-bottom: $full-unit;
+    @include desktop {
+      width: 80%;
+    }
   }
   &__gallery {
     width: 90%;
     @include flex-column-center();
+    @include tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    @include desktop {
+      width: 80%;
+    }
   }
   &__images {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center bottom;
-    margin-bottom: $full-unit;
+    padding-bottom: $full-unit;
+    @include tablet {
+      width: calc(33.33% - 1rem);
+      padding-bottom: $full-plus-half-unit;
+    }
   }
 }
 
