@@ -18,6 +18,13 @@
     @include mobile-header-font();
     z-index: 1;
     padding-left: $full-unit;
+    @include tablet {
+      @include desktop-header-font();
+      padding-left: 5%;
+    }
+    @include desktop {
+      padding-left: 10%;
+    }
   }
   &__filter {
     position: absolute;
@@ -34,6 +41,13 @@
   @include flex-column-center();
   margin: auto;
   width: 90%;
+  padding-bottom: $full-unit;
+  @include tablet {
+    padding-bottom: $double-unit;
+  }
+  @include desktop {
+    width: 85%;
+  }
 
   &__title {
     @include mobile-header-font();
@@ -41,12 +55,28 @@
     width: 100%;
     padding-top: $full-plus-half-unit;
     padding-bottom: $full-unit;
+    @include tablet {
+      @include desktop-section-header-font();
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
   }
   &__image-1 {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center bottom;
+    @include tablet {
+      width: 85%;
+      object-position: center;
+    }
+  }
+  &__text,
+  &__text-container1 {
+    width: 100%;
+    @include tablet {
+      width: 85%;
+    }
   }
   &__text-1,
   &__text-2 {
@@ -54,19 +84,53 @@
     color: $p-color1;
     padding-top: 0.6rem;
     text-align: left;
-    width: 100%;
   }
   &__text-1 {
     padding-top: $full-unit;
+    @include tablet {
+      @include desktop-subheader-font();
+    }
+    @include desktop {
+      padding-right: 18%;
+    }
+  }
+  &__text-2 {
+    @include tablet {
+      @include desktop-body-font-bold();
+    }
   }
   &__text-3 {
+    @include mobile-body-font-normal();
+    margin-top: $full-plus-half-unit;
+    text-align: left;
+    @include tablet {
+      @include desktop-subheader-font();
+      margin-top: 3rem;
+    }
+  }
+  &__text-container1 {
+    @include tablet {
+      display: flex;
+    }
+  }
+  &__text-4,
+  &__text-5 {
     @include mobile-body-font-light();
     color: $p-color1;
-    margin-top: $full-plus-half-unit;
-    margin-bottom: $full-unit;
+    padding-top: $full-unit;
+    @include tablet {
+      @include desktop-body-font-normal();
+    }
   }
-  &__text-adjust1 {
-    @include mobile-body-font-normal();
+  &__text-4 {
+    @include tablet {
+      padding-right: $full-unit;
+    }
+  }
+  &__text-5 {
+    @include tablet {
+      padding-left: $full-unit;
+    }
   }
 }
 

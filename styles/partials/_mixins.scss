@@ -17,13 +17,23 @@
   font-size: 1.5rem;
   line-height: 2rem;
 }
-@mixin desktop-body-font {
+@mixin desktop-body-font-light {
   font-family: $fontLight;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
-@mixin desktop-footer-font {
-  font-family: $fontLight;
+@mixin desktop-body-font-normal {
+  font-family: $fontNormal;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@mixin desktop-body-font-bold {
+  font-family: $fontBold;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+@mixin desktop-footer-bold {
+  font-family: $fontBold;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }

@@ -28,6 +28,19 @@
   z-index: 1;
   padding-left: 1rem;
 }
+@media (min-width: 768px) {
+  .hero-container__title {
+    font-family: "avenirBold";
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    padding-left: 5%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-container__title {
+    padding-left: 10%;
+  }
+}
 .hero-container__filter {
   position: absolute;
   width: 100%;
@@ -43,6 +56,17 @@
   align-items: center;
   margin: auto;
   width: 90%;
+  padding-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .main1 {
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .main1 {
+    width: 85%;
+  }
 }
 .main1__title {
   font-family: "avenirNormal";
@@ -53,6 +77,15 @@
   padding-top: 1.5rem;
   padding-bottom: 1rem;
 }
+@media (min-width: 768px) {
+  .main1__title {
+    font-family: "avenirBold";
+    font-size: 2.25rem;
+    line-height: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+}
 .main1__image-1 {
   width: 100%;
   aspect-ratio: 16/9;
@@ -61,6 +94,21 @@
   -o-object-position: center bottom;
      object-position: center bottom;
 }
+@media (min-width: 768px) {
+  .main1__image-1 {
+    width: 85%;
+    -o-object-position: center;
+       object-position: center;
+  }
+}
+.main1__text, .main1__text-container1 {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .main1__text, .main1__text-container1 {
+    width: 85%;
+  }
+}
 .main1__text-1, .main1__text-2 {
   font-family: "avenirBold";
   font-size: 0.8125rem;
@@ -68,23 +116,72 @@
   color: #323232;
   padding-top: 0.6rem;
   text-align: left;
-  width: 100%;
 }
 .main1__text-1 {
   padding-top: 1rem;
 }
+@media (min-width: 768px) {
+  .main1__text-1 {
+    font-family: "avenirNormal";
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .main1__text-1 {
+    padding-right: 18%;
+  }
+}
+@media (min-width: 768px) {
+  .main1__text-2 {
+    font-family: "avenirBold";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
 .main1__text-3 {
+  font-family: "avenirNormal";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  margin-top: 1.5rem;
+  text-align: left;
+}
+@media (min-width: 768px) {
+  .main1__text-3 {
+    font-family: "avenirNormal";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    margin-top: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .main1__text-container1 {
+    display: flex;
+  }
+}
+.main1__text-4, .main1__text-5 {
   font-family: "avenirLight";
   font-size: 0.8125rem;
   line-height: 1.125rem;
   color: #323232;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
+  padding-top: 1rem;
 }
-.main1__text-adjust1 {
-  font-family: "avenirNormal";
-  font-size: 0.8125rem;
-  line-height: 1.125rem;
+@media (min-width: 768px) {
+  .main1__text-4, .main1__text-5 {
+    font-family: "avenirNormal";
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+  }
+}
+@media (min-width: 768px) {
+  .main1__text-4 {
+    padding-right: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .main1__text-5 {
+    padding-left: 1rem;
+  }
 }
 
 .main2 {
