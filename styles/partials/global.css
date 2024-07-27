@@ -90,12 +90,14 @@ a {
   padding: 0.5rem;
   flex-grow: 1;
   border-bottom: 3px solid rgba(255, 255, 255, 0);
+  transition: 0.5s ease;
 }
 @media (min-width: 768px) {
   .nav-bar__link {
     padding: 1.5rem 0;
     flex-grow: 0;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: 0.5s ease;
     font-family: "avenirLight";
     font-size: 0.8rem;
     line-height: 1.25rem;

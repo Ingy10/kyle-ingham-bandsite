@@ -235,12 +235,17 @@
   -o-object-position: center bottom;
      object-position: center bottom;
   margin-bottom: 1rem;
+  filter: grayscale(100%);
+  transition: 1s;
+}
+.main2__images:active {
+  filter: grayscale(0%);
+  transition: 0.5s;
 }
 @media (min-width: 768px) {
   .main2__images {
     width: calc(33.33% - 1rem);
     margin-bottom: 1.5rem;
-    filter: grayscale(100%);
     transition: 1s ease-in-out;
   }
 }

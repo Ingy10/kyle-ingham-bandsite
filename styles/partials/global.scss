@@ -69,10 +69,12 @@ a {
     padding: 0.5rem;
     flex-grow: 1;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
+    transition: 0.5s ease;
     @include tablet {
       padding: $full-plus-half-unit 0;
       flex-grow: 0;
       border-bottom: 3px solid rgba(255, 255, 255, 0);
+      transition: 0.5s ease;
       @include desktop-button-font();
     }
     @include desktop {

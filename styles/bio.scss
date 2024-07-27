@@ -168,10 +168,15 @@
     object-fit: cover;
     object-position: center bottom;
     margin-bottom: $full-unit;
+    filter: grayscale(100%);
+    transition: 1s;
+    &:active {
+      filter: grayscale(0%);
+      transition: 0.5s;
+    }
     @include tablet {
       width: calc(33.33% - $full-unit);
       margin-bottom: $full-plus-half-unit;
-      filter: grayscale(100%);
       transition: 1s ease-in-out;
     }
     &:hover {
