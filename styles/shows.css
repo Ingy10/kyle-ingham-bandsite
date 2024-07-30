@@ -16,7 +16,7 @@
   flex-direction: column;
   justify-content: space-evenly;
 }
-.hero-container__sub-text {
+.hero-container__subtitle {
   width: 100%;
   padding-left: 1rem;
   color: #fafafa;

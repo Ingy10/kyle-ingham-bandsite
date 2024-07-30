@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./styles/bio.css" />
     <link rel="stylesheet" href="./styles/partials/global.css" />
     <title>Band Site</title>
+    <script src="./scripts/index-page.js" defer></script>
   </head>
   <body>
     <header>
@@ -21,7 +22,7 @@
               <a class="nav-bar__link">Biography</a>
             </li>
             <li class="nav-bar__item nav-bar__item-2">
-              <a class="nav-bar__link">Shows</a>
+              <a class="nav-bar__link" href="./pages/shows.html">Shows</a>
             </li>
           </ul>
         </div>
@@ -120,16 +121,16 @@
         <h1 class="main3__title subheader-title">Join the Conversation</h1>
         <div class="main3__form-section">
           <div class="main3__icon-profile icon-profile"></div>
-          <form class="main3__form" method="post" action="">
+          <form class="main3__form">
             <fieldset class="main3__fieldset">
               <legend class="main3__legend-hidden">Leave a Comment</legend>
               <label class="main3__label main3__label-1" for="name">NAME</label>
               <input
                 class="main3__input main3__input-1"
                 id="name"
+                name="name"
                 type="text"
                 placeholder="Enter your name"
-                required
               />
               <label class="main3__label main3__label-2" for="comment"
                 >COMMENT</label
@@ -142,13 +143,10 @@
                 rows="5"
                 cols="40"
                 placeholder="Add a new comment"
-                required
               ></textarea>
-              <input
-                class="main3__submit-button submit-button"
-                type="submit"
-                value="COMMENT"
-              />
+              <button class="main3__submit-button submit-button">
+                COMMENT
+              </button>
             </fieldset>
           </form>
         </div>

@@ -358,7 +358,7 @@
 .main3__input:focus {
   border: 1px solid #323232;
 }
-.main3__input:invalid {
+.main3__input-invalid {
   border: 1px solid #d22d2d;
 }
 .main3__submit-button {
