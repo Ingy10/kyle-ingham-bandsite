@@ -6,34 +6,6 @@
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
   aspect-ratio: 16/9;
-  position: relative;
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-
-  &__title {
-    color: $p-color3;
-    @include mobile-header-font();
-    z-index: 1;
-    padding-left: $full-unit;
-    @include tablet {
-      @include desktop-header-font();
-      padding-left: 5%;
-    }
-    @include desktop {
-      padding-left: 10%;
-    }
-  }
-  &__filter {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 50%;
-    background-color: $p-color1;
-    z-index: 0;
-  }
 }
 
 // Main section
@@ -367,104 +339,104 @@
 }
 
 // Footer
-.footer {
-  background-color: $p-color1;
-  display: flex;
-  justify-content: center;
+// .footer {
+//   background-color: $p-color1;
+//   display: flex;
+//   justify-content: center;
 
-  &__container {
-    width: 90%;
-    padding: $double-unit 0;
-    @include tablet() {
-      padding: 4rem 0 3.5rem;
-      position: relative;
-    }
-    @include desktop() {
-      width: 80%;
-    }
-  }
-  &__section1 {
-    @include tablet() {
-      display: flex;
-      align-items: center;
-      max-width: 691px;
-    }
-  }
-  &__section1-title {
-    @include mobile-header-font();
-    color: $p-color3;
-    margin-bottom: $full-unit;
-    padding-left: 0.1rem;
-    @include tablet() {
-      @include desktop-section-header-font();
-      margin: 0;
-      padding-right: 6%;
-    }
-  }
-  &__icon {
-    margin-right: $full-plus-half-unit;
-  }
-  &__image {
-    @include tablet {
-      margin-top: 0.5rem;
-    }
-  }
-  &__icon-image1 {
-    width: 1.4rem;
-  }
-  &__icon-image2 {
-    width: 0.8rem;
-  }
-  &__icon-image3 {
-    width: 1.7rem;
-  }
-  &__section2 {
-    margin-bottom: $double-unit;
-    @include tablet() {
-      padding-top: $full-plus-half-unit;
-      display: flex;
-      justify-content: space-between;
-      max-width: 691px;
-      margin-bottom: $full-plus-half-unit;
-    }
-  }
-  &__div {
-    padding-top: $full-plus-half-unit;
-    color: $p-color3;
-    @include mobile-footer-font();
-    @include tablet() {
-      display: flex;
-      flex-direction: column;
-    }
-  }
-  &__text {
-    @include tablet() {
-      margin: 0;
-      padding-bottom: $full-plus-half-unit;
-    }
-  }
-  &__text1 {
-    @include mobile-body-font-normal();
-  }
-  &__text1,
-  &__text2 {
-    margin-bottom: $full-unit;
-    @include tablet() {
-      margin: 0;
-    }
-  }
-  &__logo {
-    margin-top: $full-unit;
-    margin-bottom: $full-unit;
-    @include tablet() {
-      position: absolute;
-      top: 77px;
-      right: 0;
-      margin: 0;
-    }
-  }
-  &__copyright {
-    color: $p-color3;
-    @include mobile-footer-font();
-  }
-}
+//   &__container {
+//     width: 90%;
+//     padding: $double-unit 0;
+//     @include tablet() {
+//       padding: 4rem 0 3.5rem;
+//       position: relative;
+//     }
+//     @include desktop() {
+//       width: 80%;
+//     }
+//   }
+//   &__section1 {
+//     @include tablet() {
+//       display: flex;
+//       align-items: center;
+//       max-width: 691px;
+//     }
+//   }
+//   &__section1-title {
+//     @include mobile-header-font();
+//     color: $p-color3;
+//     margin-bottom: $full-unit;
+//     padding-left: 0.1rem;
+//     @include tablet() {
+//       @include desktop-section-header-font();
+//       margin: 0;
+//       padding-right: 6%;
+//     }
+//   }
+//   &__icon {
+//     margin-right: $full-plus-half-unit;
+//   }
+//   &__image {
+//     @include tablet {
+//       margin-top: 0.5rem;
+//     }
+//   }
+//   &__icon-image1 {
+//     width: 1.4rem;
+//   }
+//   &__icon-image2 {
+//     width: 0.8rem;
+//   }
+//   &__icon-image3 {
+//     width: 1.7rem;
+//   }
+//   &__section2 {
+//     margin-bottom: $double-unit;
+//     @include tablet() {
+//       padding-top: $full-plus-half-unit;
+//       display: flex;
+//       justify-content: space-between;
+//       max-width: 691px;
+//       margin-bottom: $full-plus-half-unit;
+//     }
+//   }
+//   &__div {
+//     padding-top: $full-plus-half-unit;
+//     color: $p-color3;
+//     @include mobile-footer-font();
+//     @include tablet() {
+//       display: flex;
+//       flex-direction: column;
+//     }
+//   }
+//   &__text {
+//     @include tablet() {
+//       margin: 0;
+//       padding-bottom: $full-plus-half-unit;
+//     }
+//   }
+//   &__text1 {
+//     @include mobile-body-font-normal();
+//   }
+//   &__text1,
+//   &__text2 {
+//     margin-bottom: $full-unit;
+//     @include tablet() {
+//       margin: 0;
+//     }
+//   }
+//   &__logo {
+//     margin-top: $full-unit;
+//     margin-bottom: $full-unit;
+//     @include tablet() {
+//       position: absolute;
+//       top: 77px;
+//       right: 0;
+//       margin: 0;
+//     }
+//   }
+//   &__copyright {
+//     color: $p-color3;
+//     @include mobile-footer-font();
+//   }
+// }

@@ -1,0 +1,28 @@
+@use "./partials/fonts" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixins" as *;
+
+// Header styles
+.hero-container {
+  background-image: url("../assets/images/hero-shows.jpg");
+  aspect-ratio: 8/7;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+  &__sub-text {
+    width: 100%;
+    padding-left: $full-unit;
+    color: $s-color3;
+    z-index: 1;
+    @include mobile-body-font-light();
+  }
+  &__title {
+    width: 100%;
+  }
+}
+
+// Main styles
+
+
+
+//Footer styles
