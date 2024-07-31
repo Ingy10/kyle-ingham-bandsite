@@ -12,19 +12,115 @@
 }
 .hero-container {
   background-image: url("../assets/images/hero-shows.jpg");
-  aspect-ratio: 8/7;
+  aspect-ratio: 16/9;
+  background-position: center;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-content: flex-start;
+}
+.hero-container__block {
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 1280px) {
+  .hero-container__block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
 }
 .hero-container__subtitle {
   width: 100%;
-  padding-left: 1rem;
+  padding-left: 5%;
+  padding-bottom: 3%;
   color: #fafafa;
-  z-index: 1;
-  font-family: "avenirLight";
+  font-family: "avenirNormal";
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
+@media (min-width: 768px) {
+  .hero-container__subtitle {
+    font-family: "avenirNormal";
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 2%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-container__subtitle {
+    padding-left: 10%;
+  }
+}
 .hero-container__title {
+  width: 65%;
+  padding-left: 5%;
+  padding-bottom: 3%;
+}
+@media (min-width: 768px) {
+  .hero-container__title {
+    width: 75%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-container__title {
+    width: 100%;
+  }
+}
+.hero-container__iframe-song {
+  height: 45%;
+  max-height: 130px;
   width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+@media (min-width: 768px) {
+  .hero-container__iframe-song {
+    width: 60%;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-container__iframe-song {
+    margin-top: 1rem;
+  }
+}
+
+.main1 {
+  display: flex;
+  flex-direction: column;
+}
+.main1__section-1 {
+  padding-top: 0.5rem;
+  border-bottom: 2px solid #e1e1e1;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.main1__title {
+  margin-bottom: 0.5rem;
+}
+.main1__text {
+  font-family: "avenirNormal";
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+}
+.main1__text-title {
+  color: #afafaf;
+  padding-bottom: 0.5rem;
+}
+.main1__text-content {
+  padding-bottom: 1rem;
+}
+.main1__text-content-1 {
+  font-family: "avenirBold";
+  font-size: 0.8125rem;
+  line-height: 1.25rem;
+}
+.main1__button {
+  width: 100%;
+  margin-bottom: 1rem;
 }/*# sourceMappingURL=shows.css.map */

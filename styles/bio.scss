@@ -6,24 +6,14 @@
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
   aspect-ratio: 16/9;
+  align-items: center;
+  background-position: bottom;
+  &__title {
+    padding-left: $full-unit;
+  }
 }
 
 // Main section
-.subheader-title {
-  @include mobile-header-font();
-  color: $p-color1;
-  width: 100%;
-  padding-top: $full-plus-half-unit;
-  padding-bottom: $full-unit;
-  @include tablet {
-    @include desktop-section-header-bold-font();
-    padding-top: 3rem;
-    padding-bottom: 2rem;
-  }
-  @include desktop {
-    padding-bottom: 3rem;
-  }
-}
 .main1 {
   @include flex-column-center();
   margin: auto;
@@ -34,6 +24,9 @@
   }
   @include desktop {
     width: 85%;
+  }
+  &__title {
+    width: 100%;
   }
   &__image-1 {
     width: 100%;
@@ -173,24 +166,8 @@
   }
 }
 .submit-button {
-  height: 2.5rem;
-  padding-top: $half-unit;
-  padding-bottom: $half-unit;
-  cursor: pointer;
-  background-color: $p-color1;
-  color: $p-color3;
-  border: none;
-  border-radius: 4px;
-  transition: 0.5s ease;
-  @include mobile-button-bold-font();
   @include tablet {
     width: 10%;
-    min-width: 9.375rem;
-    @include desktop-button-bold-font();
-  }
-  &:hover {
-    background-color: $s-color1;
-    transition: 0.5s ease;
   }
 }
 .main3 {
@@ -201,11 +178,13 @@
     width: 80%;
   }
 
+  &__title {
+    width: 100%;
+  }
   &__form-section {
     display: flex;
     flex-direction: row;
     width: 100%;
-    // border: 1px solid pink;
     @include tablet {
       width: 80%;
     }
@@ -220,7 +199,6 @@
   &__form {
     width: 95%;
     padding-bottom: $full-unit;
-    // border: 1px solid orange;
     @include tablet {
       padding-bottom: $full-plus-half-unit;
     }
@@ -230,7 +208,6 @@
     border: none;
     width: 100%;
     padding: 0;
-    // border: 1px solid green;
     color: $p-color2;
     @include mobile-body-font-normal();
     @include tablet {
@@ -284,7 +261,6 @@
     }
   }
   &__div-comment-box {
-    // border: 1px solid purple;
     display: flex;
     justify-content: space-between;
     border-top: 2px solid $s-color2;
@@ -303,7 +279,6 @@
     padding-left: $half-unit;
     padding-top: $full-plus-half-unit;
     padding-bottom: $full-plus-half-unit;
-    // border: 1px solid blue;
   }
   &__div-comment-box:last-child {
     border-bottom: 2px solid $s-color2;
@@ -337,106 +312,3 @@
     }
   }
 }
-
-// Footer
-// .footer {
-//   background-color: $p-color1;
-//   display: flex;
-//   justify-content: center;
-
-//   &__container {
-//     width: 90%;
-//     padding: $double-unit 0;
-//     @include tablet() {
-//       padding: 4rem 0 3.5rem;
-//       position: relative;
-//     }
-//     @include desktop() {
-//       width: 80%;
-//     }
-//   }
-//   &__section1 {
-//     @include tablet() {
-//       display: flex;
-//       align-items: center;
-//       max-width: 691px;
-//     }
-//   }
-//   &__section1-title {
-//     @include mobile-header-font();
-//     color: $p-color3;
-//     margin-bottom: $full-unit;
-//     padding-left: 0.1rem;
-//     @include tablet() {
-//       @include desktop-section-header-font();
-//       margin: 0;
-//       padding-right: 6%;
-//     }
-//   }
-//   &__icon {
-//     margin-right: $full-plus-half-unit;
-//   }
-//   &__image {
-//     @include tablet {
-//       margin-top: 0.5rem;
-//     }
-//   }
-//   &__icon-image1 {
-//     width: 1.4rem;
-//   }
-//   &__icon-image2 {
-//     width: 0.8rem;
-//   }
-//   &__icon-image3 {
-//     width: 1.7rem;
-//   }
-//   &__section2 {
-//     margin-bottom: $double-unit;
-//     @include tablet() {
-//       padding-top: $full-plus-half-unit;
-//       display: flex;
-//       justify-content: space-between;
-//       max-width: 691px;
-//       margin-bottom: $full-plus-half-unit;
-//     }
-//   }
-//   &__div {
-//     padding-top: $full-plus-half-unit;
-//     color: $p-color3;
-//     @include mobile-footer-font();
-//     @include tablet() {
-//       display: flex;
-//       flex-direction: column;
-//     }
-//   }
-//   &__text {
-//     @include tablet() {
-//       margin: 0;
-//       padding-bottom: $full-plus-half-unit;
-//     }
-//   }
-//   &__text1 {
-//     @include mobile-body-font-normal();
-//   }
-//   &__text1,
-//   &__text2 {
-//     margin-bottom: $full-unit;
-//     @include tablet() {
-//       margin: 0;
-//     }
-//   }
-//   &__logo {
-//     margin-top: $full-unit;
-//     margin-bottom: $full-unit;
-//     @include tablet() {
-//       position: absolute;
-//       top: 77px;
-//       right: 0;
-//       margin: 0;
-//     }
-//   }
-//   &__copyright {
-//     color: $p-color3;
-//     @include mobile-footer-font();
-//   }
-// }

@@ -103,15 +103,12 @@ a {
 .hero-container {
   position: relative;
   background-size: cover;
-  background-position: bottom;
   display: flex;
-  align-items: center;
 
   &__title {
     color: $p-color3;
     @include mobile-header-font();
     z-index: 1;
-    padding-left: $full-unit;
     @include tablet {
       @include desktop-header-font();
       padding-left: 5%;
@@ -127,6 +124,21 @@ a {
     opacity: 50%;
     background-color: $p-color1;
     z-index: 0;
+  }
+}
+// Main
+.subheader-title {
+  @include mobile-header-font();
+  color: $p-color1;
+  padding-top: $full-plus-half-unit;
+  padding-bottom: $full-unit;
+  @include tablet {
+    @include desktop-section-header-bold-font();
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  @include desktop {
+    padding-bottom: 3rem;
   }
 }
 
@@ -233,8 +245,28 @@ a {
   }
 }
 
-// Logo (can not exceed dimensions below as per style-guide)
+// Logos and Buttons (can not exceed dimensions below as per style-guide)
 .main-logo {
   max-height: 1.25rem;
   max-width: 7.5rem;
+}
+.submit-button {
+  height: 2.5rem;
+  padding-top: $half-unit;
+  padding-bottom: $half-unit;
+  cursor: pointer;
+  background-color: $p-color1;
+  color: $p-color3;
+  border: none;
+  border-radius: 4px;
+  transition: 0.5s ease;
+  @include mobile-button-bold-font();
+  @include tablet {
+    min-width: 9.375rem;
+    @include desktop-button-bold-font();
+  }
+  &:hover {
+    background-color: $s-color1;
+    transition: 0.5s ease;
+  }
 }
