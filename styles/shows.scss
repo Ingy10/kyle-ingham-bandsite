@@ -70,21 +70,100 @@
 .main1 {
   display: flex;
   flex-direction: column;
+  @include tablet {
+    align-items: center;
+  }
+  @include desktop {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
 
   &__section-1 {
     padding-top: $half-unit;
     border-bottom: 2px solid $s-color2;
     padding-left: 5%;
     padding-right: 5%;
+    width: 100%;
+    margin-bottom: $full-unit;
+    @include tablet {
+      border: none;
+    }
+    @include desktop {
+      width: 75%;
+      margin-top: 3.5rem;
+      padding-right: 10%;
+    }
   }
   &__title {
     margin-bottom: $half-unit;
+    width: 90%;
+    padding-left: 5%;
+    @include tablet {
+      padding-left: 1%;
+    }
+    @include desktop {
+      width: 25%;
+      padding-left: 10%;
+    }
+  }
+  &__subtitle-containers {
+    display: none;
+    @include tablet {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      padding-left: $full-unit;
+      padding-right: $full-unit;
+      padding-bottom: $full-unit;
+    }
+    @include desktop {
+      padding-bottom: $double-unit;
+    }
+  }
+  &__subtitle-container {
+    @include tablet {
+      flex-grow: 1;
+      width: 25%;
+    }
+  }
+  &__content-container {
+    @include tablet {
+      border-bottom: 2px solid $s-color2;
+      padding-left: $full-unit;
+      padding-right: $full-unit;
+      margin-bottom: $full-unit;
+    }
+  }
+  &__divs {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__div {
+    @include tablet {
+      flex-grow: 1;
+      width: 25%;
+    }
   }
   &__text {
     @include mobile-body-font-normal();
     &-title {
       color: $p-color2;
       padding-bottom: $half-unit;
+    }
+    &-title-mobile {
+      @include tablet {
+        display: none;
+      }
+    }
+    &-title-tablet {
+      display: none;
+      @include tablet {
+        display: flex;
+      }
     }
     &-content {
       padding-bottom: $full-unit;
@@ -96,6 +175,9 @@
   &__button {
     width: 100%;
     margin-bottom: $full-unit;
+    @include tablet {
+      width: 20%;
+    }
   }
 }
 

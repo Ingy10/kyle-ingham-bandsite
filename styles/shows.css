@@ -94,14 +94,98 @@
   display: flex;
   flex-direction: column;
 }
+@media (min-width: 768px) {
+  .main1 {
+    align-items: center;
+  }
+}
+@media (min-width: 1280px) {
+  .main1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
 .main1__section-1 {
   padding-top: 0.5rem;
   border-bottom: 2px solid #e1e1e1;
   padding-left: 5%;
   padding-right: 5%;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .main1__section-1 {
+    border: none;
+  }
+}
+@media (min-width: 1280px) {
+  .main1__section-1 {
+    width: 75%;
+    margin-top: 3.5rem;
+    padding-right: 10%;
+  }
 }
 .main1__title {
   margin-bottom: 0.5rem;
+  width: 90%;
+  padding-left: 5%;
+}
+@media (min-width: 768px) {
+  .main1__title {
+    padding-left: 1%;
+  }
+}
+@media (min-width: 1280px) {
+  .main1__title {
+    width: 25%;
+    padding-left: 10%;
+  }
+}
+.main1__subtitle-containers {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main1__subtitle-containers {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+@media (min-width: 1280px) {
+  .main1__subtitle-containers {
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .main1__subtitle-container {
+    flex-grow: 1;
+    width: 25%;
+  }
+}
+@media (min-width: 768px) {
+  .main1__content-container {
+    border-bottom: 2px solid #e1e1e1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .main1__divs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+@media (min-width: 768px) {
+  .main1__div {
+    flex-grow: 1;
+    width: 25%;
+  }
 }
 .main1__text {
   font-family: "avenirNormal";
@@ -111,6 +195,19 @@
 .main1__text-title {
   color: #afafaf;
   padding-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .main1__text-title-mobile {
+    display: none;
+  }
+}
+.main1__text-title-tablet {
+  display: none;
+}
+@media (min-width: 768px) {
+  .main1__text-title-tablet {
+    display: flex;
+  }
 }
 .main1__text-content {
   padding-bottom: 1rem;
@@ -123,4 +220,9 @@
 .main1__button {
   width: 100%;
   margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .main1__button {
+    width: 20%;
+  }
 }/*# sourceMappingURL=shows.css.map */
