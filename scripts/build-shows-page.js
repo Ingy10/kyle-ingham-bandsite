@@ -1,4 +1,4 @@
-const showSection = document.querySelector(".main1__section1");
+const showSection = document.querySelector(".main1");
 
 const shows = [
   {
@@ -33,11 +33,149 @@ const shows = [
   },
 ];
 
-function displayShows(show) {
-  const title = showSection.createElement("h1");
-  const showContainer = showSection.createElement("div");
+// Main section content
+// non-repeated top section of main content
+const title = document.createElement("h1");
+const section1 = document.createElement("section");
+const subtitleContainers = document.createElement("div");
+const subtitleContainer1 = document.createElement("div");
+const subtitleContainer2 = document.createElement("div");
+const subtitleContainer3 = document.createElement("div");
+const subtitleContainer4 = document.createElement("div");
+const textTitleTablet1 = document.createElement("p");
+const textTitleTablet2 = document.createElement("p");
+const textTitleTablet3 = document.createElement("p");
+
+// fixed value assignments
+title.textContent = "Shows";
+textTitleTablet1.textContent = "DATE";
+textTitleTablet2.textContent = "VENUE";
+textTitleTablet3.textContent = "LOCATION";
+
+// Assignment of parent-child relationships
+showSection.appendChild(title);
+showSection.appendChild(section1);
+section1.appendChild(subtitleContainers);
+subtitleContainers.appendChild(subtitleContainer1);
+subtitleContainers.appendChild(subtitleContainer2);
+subtitleContainers.appendChild(subtitleContainer3);
+subtitleContainers.appendChild(subtitleContainer4);
+subtitleContainer1.appendChild(textTitleTablet1);
+subtitleContainer2.appendChild(textTitleTablet2);
+subtitleContainer3.appendChild(textTitleTablet3);
+
+// Assignment of classes
+title.classList.add("main1__title", "subheader-title");
+section1.classList.add("main1__section-1");
+subtitleContainers.classList.add("main1__subtitle-containers");
+subtitleContainer1.classList.add("main1__subtitle-container");
+subtitleContainer2.classList.add("main1__subtitle-container");
+subtitleContainer3.classList.add("main1__subtitle-container");
+subtitleContainer4.classList.add("main1__subtitle-container");
+textTitleTablet1.classList.add(
+  "main1__text",
+  "main1__text-title",
+  "main1__text-title-tablet"
+);
+textTitleTablet2.classList.add(
+  "main1__text",
+  "main1__text-title",
+  "main1__text-title-tablet"
+);
+textTitleTablet3.classList.add(
+  "main1__text",
+  "main1__text-title",
+  "main1__text-title-tablet"
+);
+
+// Show content to be added via show array
+function inputShows(show) {
+  const contentContainer = document.createElement("div");
+  const divs = document.createElement("div");
+  const div1 = document.createElement("div");
+  const textContentDate = document.createElement("p");
+  const div2 = document.createElement("div");
+  const textContentVenue = document.createElement("p");
+  const div3 = document.createElement("div");
+  const textContentLocation = document.createElement("p");
+  const div4 = document.createElement("div");
+  const button = document.createElement("button");
+  const textTitleMobile1 = document.createElement("p");
+  const textTitleMobile2 = document.createElement("p");
+  const textTitleMobile3 = document.createElement("p");
+
+  button.textContent = "BUY TICKETS";
+
+  section1.appendChild(contentContainer);
+  contentContainer.appendChild(divs);
+  divs.appendChild(textTitleMobile1);
+  divs.appendChild(div1);
+  div1.appendChild(textContentDate);
+  divs.appendChild(textTitleMobile2);
+  divs.appendChild(div2);
+  div2.appendChild(textContentVenue);
+  divs.appendChild(textTitleMobile3);
+  divs.appendChild(div3);
+  div3.appendChild(textContentLocation);
+  divs.appendChild(div4);
+  div4.appendChild(button);
+
+  contentContainer.classList.add("main1__content-container");
+  divs.classList.add("main1__divs");
+  div1.classList.add("main1__div");
+  div2.classList.add("main1__div");
+  div3.classList.add("main1__div");
+  div4.classList.add("main1__div");
+  textContentDate.classList.add(
+    "main1__text",
+    "main1__text-content",
+    "main1__text-content-1"
+  );
+  textContentVenue.classList.add(
+    "main1__text",
+    "main1__text-content",
+    "main1__text-content-2"
+  );
+  textContentLocation.classList.add(
+    "main1__text",
+    "main1__text-content",
+    "main1__text-content-3"
+  );
+  button.classList.add("main1__button", "submit-button");
+  textTitleMobile1.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-mobile"
+  );
+  textTitleMobile2.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-mobile"
+  );
+  textTitleMobile3.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-mobile"
+  );
+
+  textTitleMobile1.textContent = "DATE";
+  textTitleMobile2.textContent = "VENUE";
+  textTitleMobile3.textContent = "LOCATION";
+  textContentDate.textContent = show.date;
+  textContentVenue.textContent = show.venue;
+  textContentLocation.textContent = show.location;
 }
 
+// loop for shows array to add each show with related structure
+function addShow(shows) {
+  for (const show of shows) {
+    inputShows(show);
+  }
+}
+
+addShow(shows); // call the function to iterate through the shows array
+
+// dynamic active element selector for specific styling to any show that is clicked
 const showItem = document.querySelectorAll(".main1__content-container");
 
 showItem.forEach((item) => {
@@ -52,58 +190,3 @@ showItem.forEach((item) => {
     }
   });
 });
-
-/* <main class="main1">
-  <h1 class="main1__title subheader-title">Shows</h1>
-  <section class="main1__section-1">
-    <div class="main1__subtitle-containers">
-      <div class="main1__subtitle-container">
-        <p class="main1__text main1__text-title main1__text-title-tablet main1__text-title-tablet-1">
-          DATE
-        </p>
-      </div>
-      <div class="main1__subtitle-container">
-        <p class="main1__text main1__text-title main1__text-title-tablet main1__text-title-tablet-2">
-          VENUE
-        </p>
-      </div>
-      <div class="main1__subtitle-container">
-        <p class="main1__text main1__text-title main1__text-title-tablet main1__text-title-tablet-3">
-          LOCATION
-        </p>
-      </div>
-      <div class="main1__subtitle-container"></div>
-    </div>
-    <div class="main1__content-container">
-      <div class="main1__divs">
-        <p class="main1__text main1__text-title main1__text-title-mobile main1__text-title-1">
-          DATE
-        </p>
-        <div class="main1__div">
-          <p class="main1__text main1__text-content main1__text-content-1">
-            Mon Sept 09 2024
-          </p>
-        </div>
-        <p class="main1__text main1__text-title main1__text-title-mobile main1__text-title-2">
-          VENUE
-        </p>
-        <div class="main1__div">
-          <p class="main1__text main1__text-content main1__text-content-2">
-            Ronald Lane
-          </p>
-        </div>
-        <p class="main1__text main1__text-title main1__text-title-mobile main1__text-title-3">
-          LOCATION
-        </p>
-        <div class="main1__div">
-          <p class="main1__text main1__text-content main1__text-content-3">
-            San Francisco, CA
-          </p>
-        </div>
-        <div class="main1__div">
-          <button class="main1__button submit-button">BUY TICKETS</button>
-        </div>
-      </div>
-    </div>
-  </section>
-</main>; */
