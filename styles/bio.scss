@@ -260,16 +260,22 @@
       min-width: 9.375rem;
     }
   }
-  &__div-comment-box {
+  &__comment-section {
+    border: 1px solid blue;
     display: flex;
-    justify-content: space-between;
-    border-top: 2px solid $s-color2;
+    flex-direction: column;
+    align-items: center;
     @include tablet {
       width: 80%;
     }
     @include desktop {
       width: 50%;
     }
+  }
+  &__div-comment-box {
+    display: flex;
+    justify-content: space-between;
+    border-top: 2px solid $s-color2;
   }
   &__icon-comment {
     margin-top: $full-plus-half-unit;

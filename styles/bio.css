@@ -335,20 +335,26 @@
     min-width: 9.375rem;
   }
 }
-.main3__div-comment-box {
+.main3__comment-section {
+  border: 1px solid blue;
   display: flex;
-  justify-content: space-between;
-  border-top: 2px solid #e1e1e1;
+  flex-direction: column;
+  align-items: center;
 }
 @media (min-width: 768px) {
-  .main3__div-comment-box {
+  .main3__comment-section {
     width: 80%;
   }
 }
 @media (min-width: 1280px) {
-  .main3__div-comment-box {
+  .main3__comment-section {
     width: 50%;
   }
+}
+.main3__div-comment-box {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #e1e1e1;
 }
 .main3__icon-comment {
   margin-top: 1.5rem;
