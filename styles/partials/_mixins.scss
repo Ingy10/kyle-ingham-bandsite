@@ -3,92 +3,110 @@
 
 //Fonts
 @mixin desktop-header-font {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 3.75rem;
   line-height: 4.25rem;
 }
 @mixin desktop-section-header-bold-font {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2rem;
 }
 @mixin desktop-section-header-font {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 2.25rem;
   line-height: 2rem;
 }
 @mixin desktop-subheader-font {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 @mixin desktop-body-font-light {
-  font-family: $fontLight, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 400;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @mixin desktop-body-font-normal {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @mixin desktop-body-font-bold {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @mixin desktop-footer-bold {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 @mixin desktop-button-font {
-  font-family: $fontLight, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 400;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @mixin desktop-button-bold-font {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @mixin mobile-header-font {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
 }
 @mixin mobile-subheader-font {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
 @mixin mobile-body-font-light {
-  font-family: $fontLight, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 400;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @mixin mobile-body-font-normal {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @mixin mobile-body-font-bold {
-  font-family: $fontBold, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 700;
   font-size: 0.8125rem;
   line-height: 1.25rem;
 }
 @mixin mobile-footer-font {
-  font-family: $fontLight, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 400;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @mixin mobile-button-font {
-  font-family: $fontLight, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 400;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @mixin mobile-button-bold-font {
-  font-family: $fontNormal, arial, sans-serif;
+  font-family: $default-font-stack;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }

@@ -169,6 +169,9 @@
       flex-grow: 1;
       width: 25%;
     }
+    &-button {
+      text-align: center;
+    }
   }
   &__text {
     @include mobile-body-font-normal();

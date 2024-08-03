@@ -1,14 +1,17 @@
 @font-face {
-  font-family: "avenirLight";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf"), url("../../assets/fonts/AvenirNextLTPro.ttf");
+  font-weight: 400;
 }
 @font-face {
-  font-family: "avenirBold";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf"), url("../../assets/fonts/AvenirNextLTProBold.ttf");
+  font-weight: 700;
 }
 @font-face {
-  font-family: "avenirNormal";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
+  font-weight: 500;
 }
 * {
   box-sizing: border-box;
@@ -89,7 +92,8 @@ a {
 }
 .nav-bar__link {
   color: #e1e1e1;
-  font-family: "avenirLight", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 400;
   font-size: 0.8rem;
   line-height: 1.25rem;
   cursor: pointer;
@@ -104,7 +108,8 @@ a {
     flex-grow: 0;
     border-bottom: 3px solid rgba(255, 255, 255, 0);
     transition: 0.5s ease;
-    font-family: "avenirLight", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 400;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }
@@ -120,14 +125,16 @@ a {
 }
 .nav-bar__link:active {
   color: #ffffff;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
   border-bottom: 3px solid #ffffff;
 }
 @media (min-width: 768px) {
   .nav-bar__link:active {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }
@@ -140,14 +147,16 @@ a {
 }
 .hero-container__title {
   color: #ffffff;
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
   z-index: 1;
 }
 @media (min-width: 768px) {
   .hero-container__title {
-    font-family: "avenirBold", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 700;
     font-size: 3.75rem;
     line-height: 4.25rem;
     padding-left: 5%;
@@ -168,7 +177,8 @@ a {
 }
 
 .subheader-title {
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
   color: #323232;
@@ -177,7 +187,8 @@ a {
 }
 @media (min-width: 768px) {
   .subheader-title {
-    font-family: "avenirBold", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 700;
     font-size: 2.25rem;
     line-height: 2rem;
     padding-top: 3rem;
@@ -218,7 +229,8 @@ a {
   }
 }
 .footer__section1-title {
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 1.5rem;
   line-height: 2rem;
   color: #ffffff;
@@ -227,7 +239,8 @@ a {
 }
 @media (min-width: 768px) {
   .footer__section1-title {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 2.25rem;
     line-height: 2rem;
     margin: 0;
@@ -266,7 +279,8 @@ a {
 .footer__div {
   padding-top: 1.5rem;
   color: #ffffff;
-  font-family: "avenirLight", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 400;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -283,7 +297,8 @@ a {
   }
 }
 .footer__text1 {
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -309,7 +324,8 @@ a {
 }
 .footer__copyright {
   color: #ffffff;
-  font-family: "avenirLight", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 400;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -329,14 +345,16 @@ a {
   border: none;
   border-radius: 4px;
   transition: 0.5s ease;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @media (min-width: 768px) {
   .submit-button {
     min-width: 9.375rem;
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }

@@ -1,25 +1,30 @@
 @font-face {
-  font-family: "avenirLight";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf"), url("../../assets/fonts/AvenirNextLTPro.ttf");
+  font-weight: 400;
 }
 @font-face {
-  font-family: "avenirBold";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf"), url("../../assets/fonts/AvenirNextLTProBold.ttf");
+  font-weight: 700;
 }
 @font-face {
-  font-family: "avenirNormal";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
+  font-weight: 500;
 }
 .nav-bar__link-2 {
   border-bottom: 3px solid #ffffff;
   color: #ffffff;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @media (min-width: 768px) {
   .nav-bar__link-2 {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }
@@ -55,13 +60,15 @@
   padding-left: 5%;
   padding-bottom: 3%;
   color: #fafafa;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
   .hero-container__subtitle {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 1.5rem;
     line-height: 2rem;
     padding-bottom: 2%;
@@ -216,8 +223,12 @@
     width: 25%;
   }
 }
+.main1__div-button {
+  text-align: center;
+}
 .main1__text {
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -242,7 +253,8 @@
   padding-bottom: 1rem;
 }
 .main1__text-content-1 {
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 0.8125rem;
   line-height: 1.25rem;
 }

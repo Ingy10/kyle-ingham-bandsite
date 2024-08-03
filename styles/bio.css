@@ -1,25 +1,30 @@
 @font-face {
-  font-family: "avenirLight";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Regular.otf"), url("../../assets/fonts/AvenirNextLTPro.ttf");
+  font-weight: 400;
 }
 @font-face {
-  font-family: "avenirBold";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Bold.otf"), url("../../assets/fonts/AvenirNextLTProBold.ttf");
+  font-weight: 700;
 }
 @font-face {
-  font-family: "avenirNormal";
+  font-family: "avenirNextLTPro";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
+  font-weight: 500;
 }
 .nav-bar__link-1 {
   border-bottom: 3px solid #ffffff;
   color: #ffffff;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
 @media (min-width: 768px) {
   .nav-bar__link-1 {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.8rem;
     line-height: 1.25rem;
   }
@@ -85,7 +90,8 @@ main {
   }
 }
 .main1__text-1, .main1__text-2 {
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 0.8125rem;
   line-height: 1.25rem;
   color: #323232;
@@ -97,7 +103,8 @@ main {
 }
 @media (min-width: 768px) {
   .main1__text-1 {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -109,13 +116,15 @@ main {
 }
 @media (min-width: 768px) {
   .main1__text-2 {
-    font-family: "avenirBold", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
 .main1__text-3 {
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin-top: 1.5rem;
@@ -123,7 +132,8 @@ main {
 }
 @media (min-width: 768px) {
   .main1__text-3 {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 1.5rem;
     line-height: 2rem;
     margin-top: 3rem;
@@ -135,7 +145,8 @@ main {
   }
 }
 .main1__text-4, .main1__text-5 {
-  font-family: "avenirLight", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 400;
   font-size: 0.8125rem;
   line-height: 1.125rem;
   color: #323232;
@@ -143,7 +154,8 @@ main {
 }
 @media (min-width: 768px) {
   .main1__text-4, .main1__text-5 {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
@@ -305,7 +317,8 @@ main {
   width: 100%;
   padding: 0;
   color: #afafaf;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -409,39 +422,45 @@ main {
   justify-content: space-between;
 }
 .main3__comment-name {
-  font-family: "avenirBold", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 700;
   font-size: 0.8125rem;
   line-height: 1.25rem;
 }
 @media (min-width: 768px) {
   .main3__comment-name {
-    font-family: "avenirBold", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 700;
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
 .main3__comment-date {
   color: #afafaf;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
   .main3__comment-date {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
 }
 .main3__comment-text {
   padding-top: 0.5rem;
-  font-family: "avenirNormal", arial, sans-serif;
+  font-family: "AvenirNextLTPro", Arial, sans-serif;
+  font-weight: 500;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
   .main3__comment-text {
-    font-family: "avenirNormal", arial, sans-serif;
+    font-family: "AvenirNextLTPro", Arial, sans-serif;
+    font-weight: 500;
     font-size: 0.875rem;
     line-height: 1.375rem;
   }

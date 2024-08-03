@@ -125,7 +125,7 @@ function inputShows(show) {
   div1.classList.add("main1__div");
   div2.classList.add("main1__div");
   div3.classList.add("main1__div");
-  div4.classList.add("main1__div");
+  div4.classList.add("main1__div", "main1__div-button");
   textContentDate.classList.add(
     "main1__text",
     "main1__text-content",
