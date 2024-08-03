@@ -10,6 +10,21 @@
   font-family: "avenirNormal";
   src: url("../../assets/fonts/AvenirNextLTPro-Demi.otf"), url("../../assets/fonts/AvenirNextLTProDemi.ttf");
 }
+.nav-bar__link-2 {
+  border-bottom: 3px solid #ffffff;
+  color: #ffffff;
+  font-family: "avenirNormal", arial, sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.25rem;
+}
+@media (min-width: 768px) {
+  .nav-bar__link-2 {
+    font-family: "avenirNormal", arial, sans-serif;
+    font-size: 0.8rem;
+    line-height: 1.25rem;
+  }
+}
+
 .hero-container {
   background-image: url("../assets/images/hero-shows.jpg");
   aspect-ratio: 16/9;
@@ -40,13 +55,13 @@
   padding-left: 5%;
   padding-bottom: 3%;
   color: #fafafa;
-  font-family: "avenirNormal";
+  font-family: "avenirNormal", arial, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
   .hero-container__subtitle {
-    font-family: "avenirNormal";
+    font-family: "avenirNormal", arial, sans-serif;
     font-size: 1.5rem;
     line-height: 2rem;
     padding-bottom: 2%;
@@ -93,6 +108,7 @@
 .main1 {
   display: flex;
   flex-direction: column;
+  background-color: #ffffff;
 }
 @media (min-width: 768px) {
   .main1 {
@@ -201,7 +217,7 @@
   }
 }
 .main1__text {
-  font-family: "avenirNormal";
+  font-family: "avenirNormal", arial, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -226,7 +242,7 @@
   padding-bottom: 1rem;
 }
 .main1__text-content-1 {
-  font-family: "avenirBold";
+  font-family: "avenirBold", arial, sans-serif;
   font-size: 0.8125rem;
   line-height: 1.25rem;
 }

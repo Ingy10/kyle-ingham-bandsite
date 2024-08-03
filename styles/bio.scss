@@ -2,6 +2,15 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
+// Nav-Bar
+.nav-bar__link-1 {
+  border-bottom: 3px solid $p-color3;
+  color: $p-color3;
+  @include mobile-button-bold-font();
+  @include tablet {
+    @include desktop-button-bold-font();
+  }
+}
 // Header section
 .hero-container {
   background-image: url(../assets/images/hero-bio.jpg);
@@ -14,11 +23,15 @@
 }
 
 // Main section
+main {
+  background-color: $p-color3;
+}
 .main1 {
   @include flex-column-center();
   margin: auto;
   width: 90%;
   padding-bottom: $full-unit;
+  background-color: $p-color3;
   @include tablet {
     padding-bottom: $double-unit;
   }
@@ -174,6 +187,7 @@
   width: 90%;
   @include flex-column-center();
   margin: auto;
+  background-color: $p-color3;
   @include desktop {
     width: 80%;
   }
@@ -195,6 +209,15 @@
   &__icon-profile {
     margin-top: 1.5rem;
     margin-right: 2%;
+    position: relative;
+    overflow: hidden;
+    &-img {
+      position: absolute;
+      width: auto;
+      height: 100%;
+      top: 0;
+      left: -5px;
+    }
   }
   &__form {
     width: 95%;
@@ -261,7 +284,6 @@
     }
   }
   &__comment-section {
-    border: 1px solid blue;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -276,6 +298,7 @@
     display: flex;
     justify-content: space-between;
     border-top: 2px solid $s-color2;
+    width: 100%;
   }
   &__icon-comment {
     margin-top: $full-plus-half-unit;

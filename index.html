@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/bio.css" />
     <link rel="stylesheet" href="./styles/partials/global.css" />
+    <link rel="stylesheet" href="./styles/bio.css" />
     <title>Band Site</title>
     <script src="./scripts/index-page.js" defer></script>
   </head>
@@ -12,17 +12,17 @@
     <header>
       <nav class="nav-bar">
         <div class="nav-bar__element-1">
-          <a class="nav-bar__logo main-logo" href="#"
+          <a class="nav-bar__logo main-logo" href="./index.html"
             ><img src="./assets/logos/Logo-bandsite.svg"
           /></a>
         </div>
         <div class="nav-bar__element-2">
           <ul class="nav-bar__list">
             <li class="nav-bar__item nav-bar__item-1">
-              <a class="nav-bar__link">Biography</a>
+              <a class="nav-bar__link nav-bar__link-1">Biography</a>
             </li>
             <li class="nav-bar__item nav-bar__item-2">
-              <a class="nav-bar__link" href="./pages/shows.html">Shows</a>
+              <a class="nav-bar__link nav-bar__link-2" href="./pages/shows.html">Shows</a>
             </li>
           </ul>
         </div>
@@ -34,7 +34,7 @@
     </header>
     <main>
       <section class="main1">
-        <h1 class="main1__title subheader-title">About the Musicians</h1>
+        <h2 class="main1__title subheader-title">About the Musicians</h2>
         <img class="main1__image-1" src="./assets/images/band.jpg" />
         <p class="main1__text main1__text-1">
           “We push each other to be the best. It’s not uncommon for one of us to
@@ -68,7 +68,7 @@
         </div>
       </section>
       <section class="main2">
-        <h1 class="main2__title subheader-title">Photo Gallery</h1>
+        <h2 class="main2__title subheader-title">Photo Gallery</h2>
         <div class="main2__gallery">
           <img
             class="main2__images main2__images-image1"
@@ -118,9 +118,14 @@
         </div>
       </section>
       <section class="main3">
-        <h1 class="main3__title subheader-title">Join the Conversation</h1>
+        <h2 class="main3__title subheader-title">Join the Conversation</h2>
         <div class="main3__form-section">
-          <div class="main3__icon-profile icon-profile"></div>
+          <div class="main3__icon-profile icon-profile">
+            <img
+              class="main3__icon-profile-img"
+              src="./assets/images/Mohan-muruge.jpg"
+            />
+          </div>
           <form class="main3__form">
             <fieldset class="main3__fieldset">
               <legend class="main3__legend-hidden">Leave a Comment</legend>
@@ -199,7 +204,7 @@
     <footer class="footer">
       <div class="footer__container">
         <section class="footer__section1">
-          <h1 class="footer__section1-title">Get in Touch</h1>
+          <h2 class="footer__section1-title">Get in Touch</h2>
           <div class="footer__section1-icons">
             <a class="footer__icon" href="https://instagram.com" target="_blank"
               ><img

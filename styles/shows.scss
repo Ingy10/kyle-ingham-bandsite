@@ -2,6 +2,16 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
 
+// Nav-Bar
+.nav-bar__link-2 {
+  border-bottom: 3px solid $p-color3;
+  color: $p-color3;
+  @include mobile-button-bold-font();
+  @include tablet {
+    @include desktop-button-bold-font();
+  }
+}
+
 // Header styles
 .hero-container {
   background-image: url("../assets/images/hero-shows.jpg");
@@ -70,6 +80,7 @@
 .main1 {
   display: flex;
   flex-direction: column;
+  background-color: $p-color3;
   @include tablet {
     align-items: center;
   }

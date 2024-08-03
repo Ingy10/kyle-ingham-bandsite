@@ -35,7 +35,7 @@ const shows = [
 
 // Main section content
 // non-repeated top section of main content
-const title = document.createElement("h1");
+const title = document.createElement("h2");
 const section1 = document.createElement("section");
 const subtitleContainers = document.createElement("div");
 const subtitleContainer1 = document.createElement("div");
