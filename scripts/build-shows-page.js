@@ -166,7 +166,7 @@ function inputShows(show) {
   textContentLocation.textContent = show.location;
 }
 
-// loop for shows array to add each show with related structure
+// loop through shows array to add each show with related structure
 function addShow(shows) {
   for (const show of shows) {
     inputShows(show);

@@ -1,4 +1,3 @@
-// Adding red border for invalid form submission
 const form = document.querySelector(".main3__form");
 const section = document.querySelector(".main3__comment-section");
 
@@ -23,7 +22,7 @@ const commentList = [
   },
 ];
 
-// display list item
+// display comment by creating elements, assigning classes and content then appending them in proper parent-child relationships
 function displayComment(commentObj) {
   const divCommentBox = document.createElement("div");
   const iconComment = document.createElement("div");
@@ -63,6 +62,7 @@ function displayComments() {
   }
 }
 
+// Function that activates when submit button is pushed.
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -70,35 +70,33 @@ form.addEventListener("submit", (event) => {
   const commentInput = document.querySelector(".main3__input-2");
   let valid = true;
 
+  // Check to see if name input is filled and adding/removing red border for invalid form submission by adding or removing invalid class
   if (event.target.name.value === "") {
-    alert("Please fill name field");
     nameInput.classList.add("main3__input-invalid");
     valid = false;
   } else {
     nameInput.classList.remove("main3__input-invalid");
   }
+
+  // Check to see if comment input is filled and adding/removing red border for invalid form submission by adding or removing invalid class
   if (event.target.comment.value === "") {
-    alert("Please fill out comment field");
     commentInput.classList.add("main3__input-invalid");
     valid = false;
   } else {
     commentInput.classList.remove("main3__input-invalid");
   }
 
+  // collecting user comment data in the form of an object if form is filled correctly
   if (valid) {
-    // collecting user data from comments if form is filled correctly
     const formData = {
       name: form.name.value,
       timestamp: new Date().toLocaleDateString(),
       comment: form.comment.value,
     };
-    commentList.unshift(formData);
-    console.log(commentList);
-    displayComments();
-    form.reset();
-    console.log(formData);
+    commentList.unshift(formData); // pushes new comment to top of comment list (position 0 of array)
+    displayComments(); // Displays comment with other comments after submission
+    form.reset(); // Clears input fields for name and comment
   }
 });
 
-console.log(commentList);
-displayComments();
+displayComments(); // Displays inital three comments
