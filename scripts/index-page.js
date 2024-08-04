@@ -22,6 +22,40 @@ const commentList = [
   },
 ];
 
+// Determine how long ago a comment was published
+function timeChange(time) {
+  const seconds = time / 1000;
+  const minutes = Math.round(seconds / 60);
+  const hours = Math.round(minutes / 60);
+  const days = Math.round(hours / 24);
+  const months = Math.round(days / 30);
+  const years = months / 12;
+
+  if (years > 1) {
+    const yearsRounded = Math.round(years);
+    if (years === 1) {
+      return `${yearsRounded} year ago`;
+    }
+    return `${yearsRounded} years ago`;
+  } else if (months > 1) {
+    return `${months} months ago`;
+  } else if (months === 1) {
+    return `${months} month ago`;
+  } else if (days > 1) {
+    return `${days} days ago`;
+  } else if (days === 1) {
+    return `${days} day ago`;
+  } else if (hours > 1) {
+    return `${hours} hours ago`;
+  } else if (hours === 1) {
+    return `${hours} hour ago`;
+  } else if (minutes > 1) {
+    return `${minutes} minutes ago`;
+  } else {
+    return `< 1 minute ago`;
+  }
+}
+
 // display comment by creating elements, assigning classes and content then appending them in proper parent-child relationships
 function displayComment(commentObj) {
   const divCommentBox = document.createElement("div");
@@ -40,8 +74,15 @@ function displayComment(commentObj) {
   commentName.classList.add("main3__comment-name");
   commentDate.classList.add("main3__comment-date");
 
+  // Setting the time to time difference from when comment was made
+  const commentTime = new Date(commentObj.timestamp);
+  const currentTime = new Date();
+  const commentTimeDifference = currentTime - commentTime;
+  const timeDifference = timeChange(commentTimeDifference);
+
+  // Assigning text content to comment element
   commentName.textContent = commentObj.name;
-  commentDate.textContent = commentObj.timestamp;
+  commentDate.textContent = timeDifference;
   commentText.textContent = commentObj.comment;
 
   commentTitle.appendChild(commentName);
@@ -90,7 +131,7 @@ form.addEventListener("submit", (event) => {
   if (valid) {
     const formData = {
       name: form.name.value,
-      timestamp: new Date().toLocaleDateString(),
+      timestamp: new Date(),
       comment: form.comment.value,
     };
     commentList.unshift(formData); // pushes new comment to top of comment list (position 0 of array)
