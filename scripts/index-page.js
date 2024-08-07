@@ -4,17 +4,6 @@ const section = document.querySelector(".main3__comment-section");
 const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
 let commentApi = new BandSiteApi(API_KEY);
 
-// Function to get comments from API
-async function getComments() {
-  try {
-    const comments = await commentApi.getComments();
-    console.log("comments:", comments.data);
-    return comments.data;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
 // Function to add a comment to the API
 async function postComment() {
   try {
@@ -28,7 +17,7 @@ async function postComment() {
   }
 }
 
-const commentList = await getComments();
+// const commentList = await getComments();
 
 // [ // To be deleted ******************* DELETE before submission **************
 //   {
@@ -124,16 +113,25 @@ function displayComment(commentObj) {
 }
 
 // clears existing text in comments and iterates through comment array, adding commentObject content into comment section
-function displayComments() {
+async function displayComments() {
   section.innerHTML = "";
-
+  // Function to get comments from API
+  async function getComments() {
+    try {
+      const comments = await commentApi.getComments();
+      return comments.data;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const commentList = await getComments();
   for (const commentObject of commentList) {
     displayComment(commentObject);
   }
 }
 
 // Function that activates when submit button is pushed.
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
   const nameInput = document.querySelector(".main3__input-1");

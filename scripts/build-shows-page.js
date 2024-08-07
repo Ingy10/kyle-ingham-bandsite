@@ -1,92 +1,66 @@
 const showSection = document.querySelector(".main1");
 
-const shows = [
-  {
-    date: "Mon Sept 09 2024",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Tue Sept 17 2024",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Oct 12 2024",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Sat Nov 16 2024",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Fri Nov 29 2024",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-  },
-  {
-    date: "Wed Dec 18 2024",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-  },
-];
+const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
+let commentApi = new BandSiteApi(API_KEY);
 
 // Main section content
-// non-repeated top section of main content
-const title = document.createElement("h2");
-const section1 = document.createElement("section");
-const subtitleContainers = document.createElement("div");
-const subtitleContainer1 = document.createElement("div");
-const subtitleContainer2 = document.createElement("div");
-const subtitleContainer3 = document.createElement("div");
-const subtitleContainer4 = document.createElement("div");
-const textTitleTablet1 = document.createElement("p");
-const textTitleTablet2 = document.createElement("p");
-const textTitleTablet3 = document.createElement("p");
+let section1; // had to declare in global scope so this variable can be used in another function
 
-// fixed value assignments
-title.textContent = "Shows";
-textTitleTablet1.textContent = "DATE";
-textTitleTablet2.textContent = "VENUE";
-textTitleTablet3.textContent = "LOCATION";
+// Function for non-repeated top section of main content
+function createStataicElements() {
+  const title = document.createElement("h2");
+  section1 = document.createElement("section");
+  const subtitleContainers = document.createElement("div");
+  const subtitleContainer1 = document.createElement("div");
+  const subtitleContainer2 = document.createElement("div");
+  const subtitleContainer3 = document.createElement("div");
+  const subtitleContainer4 = document.createElement("div");
+  const textTitleTablet1 = document.createElement("p");
+  const textTitleTablet2 = document.createElement("p");
+  const textTitleTablet3 = document.createElement("p");
 
-// Assignment of parent-child relationships
-showSection.appendChild(title);
-showSection.appendChild(section1);
-section1.appendChild(subtitleContainers);
-subtitleContainers.appendChild(subtitleContainer1);
-subtitleContainers.appendChild(subtitleContainer2);
-subtitleContainers.appendChild(subtitleContainer3);
-subtitleContainers.appendChild(subtitleContainer4);
-subtitleContainer1.appendChild(textTitleTablet1);
-subtitleContainer2.appendChild(textTitleTablet2);
-subtitleContainer3.appendChild(textTitleTablet3);
+  // fixed value assignments
+  title.textContent = "Shows";
+  textTitleTablet1.textContent = "DATE";
+  textTitleTablet2.textContent = "VENUE";
+  textTitleTablet3.textContent = "LOCATION";
 
-// Assignment of classes
-title.classList.add("main1__title", "subheader-title");
-section1.classList.add("main1__section-1");
-subtitleContainers.classList.add("main1__subtitle-containers");
-subtitleContainer1.classList.add("main1__subtitle-container");
-subtitleContainer2.classList.add("main1__subtitle-container");
-subtitleContainer3.classList.add("main1__subtitle-container");
-subtitleContainer4.classList.add("main1__subtitle-container");
-textTitleTablet1.classList.add(
-  "main1__text",
-  "main1__text-title",
-  "main1__text-title-tablet"
-);
-textTitleTablet2.classList.add(
-  "main1__text",
-  "main1__text-title",
-  "main1__text-title-tablet"
-);
-textTitleTablet3.classList.add(
-  "main1__text",
-  "main1__text-title",
-  "main1__text-title-tablet"
-);
+  // Assignment of parent-child relationships
+  showSection.appendChild(title);
+  showSection.appendChild(section1);
+  section1.appendChild(subtitleContainers);
+  subtitleContainers.appendChild(subtitleContainer1);
+  subtitleContainers.appendChild(subtitleContainer2);
+  subtitleContainers.appendChild(subtitleContainer3);
+  subtitleContainers.appendChild(subtitleContainer4);
+  subtitleContainer1.appendChild(textTitleTablet1);
+  subtitleContainer2.appendChild(textTitleTablet2);
+  subtitleContainer3.appendChild(textTitleTablet3);
+
+  // Assignment of classes
+  title.classList.add("main1__title", "subheader-title");
+  section1.classList.add("main1__section-1");
+  subtitleContainers.classList.add("main1__subtitle-containers");
+  subtitleContainer1.classList.add("main1__subtitle-container");
+  subtitleContainer2.classList.add("main1__subtitle-container");
+  subtitleContainer3.classList.add("main1__subtitle-container");
+  subtitleContainer4.classList.add("main1__subtitle-container");
+  textTitleTablet1.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-tablet"
+  );
+  textTitleTablet2.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-tablet"
+  );
+  textTitleTablet3.classList.add(
+    "main1__text",
+    "main1__text-title",
+    "main1__text-title-tablet"
+  );
+}
 
 // Show content to be added via show array
 function inputShows(show) {
@@ -161,32 +135,47 @@ function inputShows(show) {
   textTitleMobile1.textContent = "DATE";
   textTitleMobile2.textContent = "VENUE";
   textTitleMobile3.textContent = "LOCATION";
-  textContentDate.textContent = show.date;
-  textContentVenue.textContent = show.venue;
+  textContentDate.textContent = new Date(show.date).toDateString();
+  textContentVenue.textContent = show.place;
   textContentLocation.textContent = show.location;
 }
 
 // loop through shows array to add each show with related structure
-function addShow(shows) {
+async function addShow() {
+  async function getShows() {
+    // Method to get shows data in array form
+    try {
+      const showList = await commentApi.getShows();
+      const showListArray = showList.data;
+      return showListArray;
+    } catch (error) {
+      console.error(error);
+    }
+  }
+  const shows = await getShows();
   for (const show of shows) {
     inputShows(show);
   }
+  activeElementSelector();
 }
 
-addShow(shows); // call the function to iterate through the shows array
-
 // dynamic active element selector for specific styling to any show that is clicked
-const showItem = document.querySelectorAll(".main1__content-container");
+function activeElementSelector() {
+  const showItem = document.querySelectorAll(".main1__content-container");
 
-showItem.forEach((item) => {
-  item.addEventListener("click", () => {
-    showItem.forEach((highlight) => {
-      highlight.classList.remove("main1__content-container-selected");
+  showItem.forEach((item) => {
+    item.addEventListener("click", () => {
+      showItem.forEach((highlight) => {
+        highlight.classList.remove("main1__content-container-selected");
+      });
+      if (
+        item.classList.contains("main1__content-container-selected") === false
+      ) {
+        item.classList.add("main1__content-container-selected");
+      }
     });
-    if (
-      item.classList.contains("main1__content-container-selected") === false
-    ) {
-      item.classList.add("main1__content-container-selected");
-    }
   });
-});
+}
+
+createStataicElements(); // call function to create static portion of main section
+addShow(); // call the function to iterate through the shows array
