@@ -1,6 +1,9 @@
 const form = document.querySelector(".main3__form");
 const section = document.querySelector(".main3__comment-section");
 
+const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
+let commentApi = new BandSiteApi(API_KEY);
+
 const commentList = [
   {
     name: "Victor Pinto",
@@ -141,3 +144,23 @@ form.addEventListener("submit", (event) => {
 });
 
 displayComments(); // Displays inital three comments
+
+async function testApiCalls() {  // Testing to see if functions are working correctly
+  try {
+    const comments = await commentApi.getComments();
+    console.log("comments:", comments.data);
+  } catch (error) {
+    console.error(error);
+  }
+
+  try {
+    const postComments = await commentApi.postComment({
+      name: "Joe Guy",
+      comment: "Test 123",
+    });
+    return postComments;
+  } catch (error) {
+    console.error("error posting comment", error);
+  }
+}
+testApiCalls();
