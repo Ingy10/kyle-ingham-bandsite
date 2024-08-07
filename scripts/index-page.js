@@ -4,26 +4,52 @@ const section = document.querySelector(".main3__comment-section");
 const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
 let commentApi = new BandSiteApi(API_KEY);
 
-const commentList = [
-  {
-    name: "Victor Pinto",
-    timestamp: "11/02/2023",
-    comment:
-      "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-  },
-  {
-    name: "Christina Cabrera",
-    timestamp: "10/28/2023",
-    comment:
-      "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-  },
-  {
-    name: "Isaac Tadesse",
-    timestamp: "10/20/2023",
-    comment:
-      "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-  },
-];
+// Function to get comments from API
+async function getComments() {
+  try {
+    const comments = await commentApi.getComments();
+    console.log("comments:", comments.data);
+    return comments.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// Function to add a comment to the API
+async function postComment() {
+  try {
+    const postComments = await commentApi.postComment({
+      name: form.name.value,
+      comment: form.comment.value,
+    });
+    return postComments;
+  } catch (error) {
+    console.error("error posting comment", error);
+  }
+}
+
+const commentList = await getComments();
+
+// [ // To be deleted ******************* DELETE before submission **************
+//   {
+//     name: "Victor Pinto",
+//     timestamp: "11/02/2023",
+//     comment:
+//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
+//   },
+//   {
+//     name: "Christina Cabrera",
+//     timestamp: "10/28/2023",
+//     comment:
+//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
+//   },
+//   {
+//     name: "Isaac Tadesse",
+//     timestamp: "10/20/2023",
+//     comment:
+//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
+//   },
+// ];
 
 // Determine how long ago a comment was published
 function timeChange(time) {
@@ -144,23 +170,3 @@ form.addEventListener("submit", (event) => {
 });
 
 displayComments(); // Displays inital three comments
-
-async function testApiCalls() {  // Testing to see if functions are working correctly
-  try {
-    const comments = await commentApi.getComments();
-    console.log("comments:", comments.data);
-  } catch (error) {
-    console.error(error);
-  }
-
-  try {
-    const postComments = await commentApi.postComment({
-      name: "Joe Guy",
-      comment: "Test 123",
-    });
-    return postComments;
-  } catch (error) {
-    console.error("error posting comment", error);
-  }
-}
-testApiCalls();
