@@ -24,4 +24,10 @@ class BandSiteApi {
     );
     return getShowList;
   }
+  async likeComment(idNumber) {
+    const likeComments = await axios.put(
+      `${this.baseUrl}comments/${idNumber}/like?api_key=${this.apiKey}`
+    );
+    return likeComments;
+  }
 }
