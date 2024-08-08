@@ -4,42 +4,6 @@ const section = document.querySelector(".main3__comment-section");
 const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
 let commentApi = new BandSiteApi(API_KEY);
 
-// Function to add a comment to the API
-async function postComment() {
-  try {
-    const postComments = await commentApi.postComment({
-      name: form.name.value,
-      comment: form.comment.value,
-    });
-    return postComments;
-  } catch (error) {
-    console.error("error posting comment", error);
-  }
-}
-
-// const commentList = await getComments();
-
-// [ // To be deleted ******************* DELETE before submission **************
-//   {
-//     name: "Victor Pinto",
-//     timestamp: "11/02/2023",
-//     comment:
-//       "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-//   },
-//   {
-//     name: "Christina Cabrera",
-//     timestamp: "10/28/2023",
-//     comment:
-//       "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-//   },
-//   {
-//     name: "Isaac Tadesse",
-//     timestamp: "10/20/2023",
-//     comment:
-//       "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-//   },
-// ];
-
 // Determine how long ago a comment was published
 function timeChange(time) {
   const seconds = time / 1000;
@@ -112,13 +76,15 @@ function displayComment(commentObj) {
   section.appendChild(divCommentBox);
 }
 
-// clears existing text in comments and iterates through comment array, adding commentObject content into comment section
+// clears existing text in comment elements and iterates through comment array, adding commentObject content into comment section
 async function displayComments() {
   section.innerHTML = "";
+
   // Function to get comments from API
   async function getComments() {
     try {
       const comments = await commentApi.getComments();
+      comments.data.sort((a, b) => b.timestamp - a.timestamp);
       return comments.data;
     } catch (error) {
       console.error(error);
@@ -133,6 +99,19 @@ async function displayComments() {
 // Function that activates when submit button is pushed.
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
+
+  // Function to add a comment to the API
+  async function postComment(userName, userComment) {
+    try {
+      const postComments = await commentApi.postComment({
+        name: `${userName}`,
+        comment: `${userComment}`,
+      });
+      return postComments;
+    } catch (error) {
+      console.error("error posting comment", error);
+    }
+  }
 
   const nameInput = document.querySelector(".main3__input-1");
   const commentInput = document.querySelector(".main3__input-2");
@@ -156,15 +135,13 @@ form.addEventListener("submit", async (event) => {
 
   // collecting user comment data in the form of an object if form is filled correctly
   if (valid) {
-    const formData = {
-      name: form.name.value,
-      timestamp: new Date(),
-      comment: form.comment.value,
-    };
-    commentList.unshift(formData); // pushes new comment to top of comment list (position 0 of array)
-    displayComments(); // Displays comment with other comments after submission
-    form.reset(); // Clears input fields for name and comment
+    const userName = form.name.value;
+    const userComment = form.comment.value;
+    await postComment(userName, userComment);
   }
+
+  displayComments(); // Displays comment with other comments after submission
+  form.reset(); // Clears input fields for name and comment
 });
 
-displayComments(); // Displays inital three comments
+displayComments(); // Displays inital comments when page loads
