@@ -80,7 +80,7 @@ function displayComment(commentObj) {
 async function displayComments() {
   section.innerHTML = "";
 
-  // Function to get comments from API
+  // Function to get and sort comments from API
   async function getComments() {
     try {
       const comments = await commentApi.getComments();
@@ -119,24 +119,24 @@ form.addEventListener("submit", async (event) => {
 
   // Check to see if name input is filled and adding/removing red border for invalid form submission by adding or removing invalid class
   if (event.target.name.value === "") {
-    nameInput.classList.add("main3__input-invalid");
+    nameInput.classList.add("main3__input--invalid");
     valid = false;
   } else {
-    nameInput.classList.remove("main3__input-invalid");
+    nameInput.classList.remove("main3__input--invalid");
   }
 
   // Check to see if comment input is filled and adding/removing red border for invalid form submission by adding or removing invalid class
   if (event.target.comment.value === "") {
-    commentInput.classList.add("main3__input-invalid");
+    commentInput.classList.add("main3__input--invalid");
     valid = false;
   } else {
-    commentInput.classList.remove("main3__input-invalid");
+    commentInput.classList.remove("main3__input--invalid");
   }
 
   // collecting user comment data in the form of an object if form is filled correctly
   if (valid) {
-    const userName = form.name.value;
-    const userComment = form.comment.value;
+    const userName = event.target.name.value;
+    const userComment = event.target.comment.value;
     await postComment(userName, userComment);
   }
 

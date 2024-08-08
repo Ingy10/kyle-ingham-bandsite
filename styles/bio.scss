@@ -1,6 +1,7 @@
 @use "./partials/fonts" as *;
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
+@import "./partials/global";
 
 // Nav-Bar
 .nav-bar__link-1 {
@@ -273,7 +274,7 @@ main {
   &__input:focus {
     border: 1px solid $p-color1;
   }
-  &__input-invalid {
+  &__input--invalid {
     border: 1px solid #d22d2d;
   }
   &__submit-button {

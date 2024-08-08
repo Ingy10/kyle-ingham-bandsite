@@ -16,13 +16,13 @@
 }
 @mixin desktop-section-header-font {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 2.25rem;
   line-height: 2rem;
 }
 @mixin desktop-subheader-font {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
 }
@@ -34,7 +34,7 @@
 }
 @mixin desktop-body-font-normal {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
@@ -58,7 +58,7 @@
 }
 @mixin desktop-button-bold-font {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
@@ -70,7 +70,7 @@
 }
 @mixin mobile-subheader-font {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
@@ -82,7 +82,7 @@
 }
 @mixin mobile-body-font-normal {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8125rem;
   line-height: 1.125rem;
 }
@@ -106,7 +106,7 @@
 }
 @mixin mobile-button-bold-font {
   font-family: $default-font-stack;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.8rem;
   line-height: 1.25rem;
 }
