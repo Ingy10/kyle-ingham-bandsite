@@ -2,7 +2,7 @@ const form = document.querySelector(".main3__form");
 const section = document.querySelector(".main3__comment-section");
 
 const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
-let commentApi = new BandSiteApi(API_KEY);
+const commentApi = new BandSiteApi(API_KEY);
 
 // Determine how long ago a comment was published
 function timeChange(time) {
@@ -114,20 +114,44 @@ async function displayComments() {
   async function likeCommentButton() {
     const like = document.querySelectorAll(".main3__comment-span");
     let likeId = 0;
-    console.log(like);
     like.forEach((button) => {
       // Add clickEventListener to each like button
       button.addEventListener("click", async () => {
-        await commentApi.likeComment(id);
-        const commentList = await getComments();
-        const incrementLike = document.querySelector(`.main3__id-${id}`);
-        const commentPosition = commentList.findIndex((node) => node.id === id);
-        incrementLike.textContent = ` ` + commentList[commentPosition].likes;
+        try {
+          await commentApi.likeComment(id);
+          const commentList = await getComments();
+          const incrementLike = document.querySelector(`.main3__id-${id}`);
+          const commentPosition = commentList.findIndex(
+            (node) => node.id === id
+          );
+          incrementLike.textContent = ` ` + commentList[commentPosition].likes;
+        } catch (error) {
+          console.error(error);
+        }
       });
       const id = commentList[likeId].id;
       const likeChild = button.querySelector(".main3__comment-like");
       likeChild.classList.add(`main3__id-${id}`);
       likeId++;
+    });
+  }
+
+  //function to delete comments
+  async function deleteCommentButton() {
+    const commentDelete = document.querySelectorAll(".main3__comment-delete");
+    let deleteId = 0;
+    commentDelete.forEach((deleteButton) => {
+      // Delete comment from comment list
+      deleteButton.addEventListener("click", async () => {
+        try {
+          await commentApi.deleteComment(id);
+          displayComments();
+        } catch (error) {
+          console.error(error);
+        }
+      });
+      const id = commentList[deleteId].id;
+      deleteId++;
     });
   }
 
@@ -137,6 +161,7 @@ async function displayComments() {
     displayComment(commentObject);
   }
   likeCommentButton();
+  deleteCommentButton();
 }
 
 // Function that activates when submit button is pushed.
@@ -188,18 +213,3 @@ form.addEventListener("submit", async (event) => {
 });
 
 displayComments(); // Displays inital comments when page loads
-
-// add click event listener to like button
-// async function likeCommentButton() {
-//   const like = document.querySelectorAll(".main3__comment-like");
-//   const commentList = await getComments();
-//   console.log(like);
-//   like.forEach((button) => {
-//     button.addEventListener("click", async () => {
-//       console.log("banana!");
-//       const id = commentList;
-//       console.log(id);
-//       // return await commentApi.likeComment(id);
-//     });
-//   });
-// }

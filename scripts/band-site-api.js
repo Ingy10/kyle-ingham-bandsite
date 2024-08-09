@@ -30,4 +30,10 @@ class BandSiteApi {
     );
     return likeComments;
   }
+  async deleteComment(idNumber) {
+    const deleteComments = await axios.delete(
+      `${this.baseUrl}comments/${idNumber}?api_key=${this.apiKey}`
+    );
+    return deleteComments;
+  }
 }
