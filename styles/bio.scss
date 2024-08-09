@@ -308,7 +308,7 @@ main {
     width: 90%;
     padding-left: $half-unit;
     padding-top: $full-plus-half-unit;
-    padding-bottom: $full-plus-half-unit;
+    padding-bottom: $half-unit;
   }
   &__div-comment-box:last-child {
     border-bottom: 2px solid $s-color2;
@@ -327,7 +327,9 @@ main {
       @include desktop-body-font-bold();
     }
   }
-  &__comment-date {
+  &__comment-date,
+  &__comment-like,
+  &__comment-delete {
     color: $p-color2;
     @include mobile-body-font-normal();
     @include tablet {
@@ -340,5 +342,14 @@ main {
     @include tablet {
       @include desktop-body-font-normal();
     }
+  }
+  &__comment-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: $full-unit;
+  }
+  &__comment-span,
+  &__comment-delete {
+    cursor: pointer;
   }
 }

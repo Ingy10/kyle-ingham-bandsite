@@ -772,7 +772,7 @@ main {
   width: 90%;
   padding-left: 0.5rem;
   padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
 }
 .main3__div-comment-box:last-child {
   border-bottom: 2px solid #e1e1e1;
@@ -801,7 +801,7 @@ main {
     line-height: 1.375rem;
   }
 }
-.main3__comment-date {
+.main3__comment-date, .main3__comment-like, .main3__comment-delete {
   color: #afafaf;
   font-family: "AvenirNextLTPro", Arial, sans-serif;
   font-weight: 600;
@@ -809,7 +809,7 @@ main {
   line-height: 1.125rem;
 }
 @media (min-width: 768px) {
-  .main3__comment-date {
+  .main3__comment-date, .main3__comment-like, .main3__comment-delete {
     font-family: "AvenirNextLTPro", Arial, sans-serif;
     font-weight: 600;
     font-size: 0.875rem;
@@ -830,4 +830,12 @@ main {
     font-size: 0.875rem;
     line-height: 1.375rem;
   }
+}
+.main3__comment-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+.main3__comment-span, .main3__comment-delete {
+  cursor: pointer;
 }/*# sourceMappingURL=bio.css.map */

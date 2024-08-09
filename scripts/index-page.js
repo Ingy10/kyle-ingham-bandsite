@@ -47,6 +47,11 @@ function displayComment(commentObj) {
   const commentName = document.createElement("p");
   const commentDate = document.createElement("p");
   const commentText = document.createElement("p");
+  const commentBottom = document.createElement("div");
+  const commentSpan = document.createElement("span");
+  const commentLikeIcon = document.createElement("img");
+  const commentLike = document.createElement("a");
+  const commentDelete = document.createElement("a");
 
   divCommentBox.classList.add("main3__div-comment-box", "main3__div-1");
   iconComment.classList.add("main3__icon-comment", "icon-profile");
@@ -55,6 +60,11 @@ function displayComment(commentObj) {
   commentText.classList.add("main3__comment-text");
   commentName.classList.add("main3__comment-name");
   commentDate.classList.add("main3__comment-date");
+  commentBottom.classList.add("main3__comment-bottom");
+  commentSpan.classList.add("main3__comment-span");
+  commentLikeIcon.classList.add("main3__comment-like-icon");
+  commentLike.classList.add("main3__comment-like");
+  commentDelete.classList.add("main3__comment-delete");
 
   // Setting the time to time difference from when comment was made
   const commentTime = new Date(commentObj.timestamp);
@@ -66,14 +76,23 @@ function displayComment(commentObj) {
   commentName.textContent = commentObj.name;
   commentDate.textContent = timeDifference;
   commentText.textContent = commentObj.comment;
+  commentLike.textContent = ` ` + commentObj.likes;
+  commentDelete.textContent = "Delete";
 
+  commentSpan.appendChild(commentLikeIcon);
+  commentSpan.appendChild(commentLike);
+  commentBottom.appendChild(commentSpan);
+  commentBottom.appendChild(commentDelete);
   commentTitle.appendChild(commentName);
   commentTitle.appendChild(commentDate);
   commentContent.appendChild(commentTitle);
   commentContent.appendChild(commentText);
+  commentContent.appendChild(commentBottom);
   divCommentBox.appendChild(iconComment);
   divCommentBox.appendChild(commentContent);
   section.appendChild(divCommentBox);
+
+  commentLikeIcon.setAttribute("src", "../assets/icons/icon-like.svg");
 }
 
 // clears existing text in comment elements and iterates through comment array, adding commentObject content into comment section
@@ -90,10 +109,34 @@ async function displayComments() {
       console.error(error);
     }
   }
+
+  // function to add likes to any comment
+  async function likeCommentButton() {
+    const like = document.querySelectorAll(".main3__comment-span");
+    let likeId = 0;
+    console.log(like);
+    like.forEach((button) => {
+      // Add clickEventListener to each like button
+      button.addEventListener("click", async () => {
+        await commentApi.likeComment(id);
+        const commentList = await getComments();
+        const incrementLike = document.querySelector(`.main3__id-${id}`);
+        const commentPosition = commentList.findIndex((node) => node.id === id);
+        incrementLike.textContent = ` ` + commentList[commentPosition].likes;
+      });
+      const id = commentList[likeId].id;
+      const likeChild = button.querySelector(".main3__comment-like");
+      likeChild.classList.add(`main3__id-${id}`);
+      likeId++;
+    });
+  }
+
   const commentList = await getComments();
+
   for (const commentObject of commentList) {
     displayComment(commentObject);
   }
+  likeCommentButton();
 }
 
 // Function that activates when submit button is pushed.
@@ -145,3 +188,18 @@ form.addEventListener("submit", async (event) => {
 });
 
 displayComments(); // Displays inital comments when page loads
+
+// add click event listener to like button
+// async function likeCommentButton() {
+//   const like = document.querySelectorAll(".main3__comment-like");
+//   const commentList = await getComments();
+//   console.log(like);
+//   like.forEach((button) => {
+//     button.addEventListener("click", async () => {
+//       console.log("banana!");
+//       const id = commentList;
+//       console.log(id);
+//       // return await commentApi.likeComment(id);
+//     });
+//   });
+// }
