@@ -114,9 +114,10 @@ async function displayComments() {
   async function likeCommentButton() {
     const like = document.querySelectorAll(".main3__comment-span");
     let likeId = 0;
+    // iterates through each comments like button and assigns event listener and unique class id
     like.forEach((button) => {
-      // Add clickEventListener to each like button
-      button.addEventListener("click", async () => {
+      // function to increment like counter, change color of counter and prevent user from clicking more than once per page visit.  *However when comment list is refreshed when new comment is added/deleted the user can technically click like again
+      const clickLike = async () => {
         try {
           await commentApi.likeComment(id);
           const commentList = await getComments();
@@ -124,11 +125,14 @@ async function displayComments() {
           const commentPosition = commentList.findIndex(
             (node) => node.id === id
           );
+          incrementLike.classList.add("main3__comment-like--clicked");
           incrementLike.textContent = ` ` + commentList[commentPosition].likes;
+          button.removeEventListener("click", clickLike);
         } catch (error) {
           console.error(error);
         }
-      });
+      };
+      button.addEventListener("click", clickLike);
       const id = commentList[likeId].id;
       const likeChild = button.querySelector(".main3__comment-like");
       likeChild.classList.add(`main3__id-${id}`);

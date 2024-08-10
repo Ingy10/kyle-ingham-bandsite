@@ -336,6 +336,10 @@ main {
       @include desktop-body-font-normal();
     }
   }
+  &__comment-like:active,
+  &__comment-delete:active {
+    color: $p-color1;
+  }
   &__comment-text {
     padding-top: $half-unit;
     @include mobile-body-font-normal();
@@ -351,5 +355,12 @@ main {
   &__comment-span,
   &__comment-delete {
     cursor: pointer;
+  }
+  &__comment-like--clicked {
+    color: $p-color1;
+    @include mobile-body-font-normal();
+    @include tablet {
+      @include desktop-body-font-normal();
+    }
   }
 }

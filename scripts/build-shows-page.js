@@ -4,7 +4,7 @@ const API_KEY = "57aa9ce8-eecb-4663-b0eb-5800a58b2572";
 let commentApi = new BandSiteApi(API_KEY);
 
 // Main section content
-let section1; // had to declare in global scope so this variable can be used in another function
+let section1; // declared in global scope so this variable can be used in multiple functions
 
 // Function for non-repeated top section of main content
 function createStataicElements() {
@@ -168,11 +168,7 @@ function activeElementSelector() {
       showItem.forEach((highlight) => {
         highlight.classList.remove("main1__content-container-selected");
       });
-      if (
-        item.classList.contains("main1__content-container-selected") === false
-      ) {
-        item.classList.add("main1__content-container-selected");
-      }
+      item.classList.add("main1__content-container-selected");
     });
   });
 }
