@@ -2,6 +2,12 @@
 
 A dynamic band website featuring live show dates and an interactive comment section, built with Vanilla JavaScript and integrated with a REST API.
 
+## 🌟 Screenshots
+
+[Project Screenshot - Landing Page](./assets/screenshots/Band%20Site%20-%20Main%20Page.png)
+
+[Project Screenshot - Shows Page](./assets/screenshots/Band%20Site%20-%20Shows%20Page.png)
+
 ## ⭐ Features
 
 - Dynamic comment section with real-time updates
